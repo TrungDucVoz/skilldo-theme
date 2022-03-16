@@ -8,7 +8,7 @@
 				<h1 style="display: none"><?php echo option::get('general_label');?></h1>
 				<?php } ?>
 				<a href="<?php echo Url::base();?>" title="<?php echo option::get('general_label');?>">
-					<?php Template::img(option::get('logo_header'), option::get('general_label'));?>
+					<?php Template::img($logo, option::get('general_label'));?>
 				</a>
 			</div>
 

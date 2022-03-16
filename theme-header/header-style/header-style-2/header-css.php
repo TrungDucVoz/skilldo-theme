@@ -2,7 +2,7 @@
 $header_slogan_height = (!empty(Option::get('header_slogan_height'))) ? (int)Option::get('header_slogan_height') : 88;?>
 <style type="text/css">
     :root {
-        --header-logo-height:<?php echo option::get('logo_height');?>px;
+        --header-logo-height:<?php echo $logoHeight;?>px;
     }
     header .header-content {
         padding:10px 0;

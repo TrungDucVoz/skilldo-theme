@@ -8,12 +8,12 @@
 				<h1 style="display: none"><?php echo option::get('general_label');?></h1>
 				<?php } ?>
 				<a href="<?php echo Url::base();?>" title="<?php echo option::get('general_label');?>">
-					<?php Template::img(option::get('logo_header'), option::get('general_label'));?>
+					<?php Template::img($logo, option::get('general_label'));?>
 				</a>
 			</div>
 
 			<div class="col-md-7 text-center">
-				<div class="slogan"><?php Template::img(option::get('header_slogan'), option::get('general_label'));?></div>
+				<div class="slogan"><?php Template::img($slogan, option::get('general_label'));?></div>
                 <p class="address"><?php echo option::get('header_txt');?></p>
 			</div>
 			

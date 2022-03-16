@@ -4,10 +4,32 @@ Class ThemeHeaderStyle1_5 {
     public static $path = 'theme-header/header-style/header-style-1.5/';
 
     static function render() {
+        $logo       = Option::get('logo_header');
+        $listItem   = Option::get('header_item');
+
+        if(empty($listItem)) {
+            $listItem = [
+                [
+                    'image' => 'https://cdn.sikido.vn/images/demo/icon-item.png',
+                    'title' => 'Đăng ký nhận báo giá',
+                    'url' => ''
+                ],
+                [
+                    'image' => 'https://cdn.sikido.vn/images/demo/icon-item.png',
+                    'title' => 'Khuyến mãi',
+                    'url' => ''
+                ]
+            ];
+        }
+
+        $headerData = [
+            'logo' => (!empty($logo)) ? $logo : 'https://cdn.sikido.vn/images/demo/logo-demo-1.png',
+            'listItem' => $listItem
+        ];
         ?>
         <header class="">
             <!-- top bar -->
-            <?php do_action('cle_header_top_bar'); Template::partial(self::$path.'header-html'); do_action('cle_header_navigation');?>
+            <?php do_action('cle_header_top_bar'); Template::partial(self::$path.'header-html', $headerData); do_action('cle_header_navigation');?>
         </header>
         <?php
     }
@@ -59,7 +81,28 @@ Class ThemeHeaderStyle1_5 {
         else if(!empty($gradient)) {
             $css .= 'background:'.$gradient.';';
         }
-        Template::partial(self::$path.'header-css', ['background' => $css]);
+        $logoHeight = (empty(Option::get('logo_height'))) ? '70' : Option::get('logo_height');
+
+        $search = [
+            'border'     => (empty(Option::get('search_border_color'))) ? Option::get('theme_color') : Option::get('search_border_color'),
+            'background' => Option::get('search_bg_color', '#fff'),
+            'btnBg'      => (empty(Option::get('search_btn_bg_color'))) ? Option::get('theme_color') : Option::get('search_btn_bg_color'),
+            'btnColor'   => Option::get('search_btn_txt_color', '#fff'),
+        ];
+
+        $item = [
+            'titleColor' => (empty(Option::get('header_item_title_color'))) ? '#fff' : Option::get('header_item_title_color'),
+            'background' => (empty(Option::get('header_item_bg_color'))) ? Option::get('theme_color') : Option::get('header_item_bg_color'),
+        ];
+
+        $headerCssData = [
+            'logoHeight' => $logoHeight,
+            'background' => $css,
+            'search' => $search,
+            'item' => $item
+        ];
+
+        Template::partial(self::$path.'header-css', $headerCssData);
     }
 
     static function script() { Template::partial(self::$path.'header-script'); }

@@ -1,11 +1,11 @@
 <style type="text/css">
     :root {
-        --header-logo-height:<?php echo option::get('logo_height');?>px;
-        --header-search-br-color:<?php echo option::get('search_border_color', 'red');?>;
-        --header-search-bg-color:<?php echo option::get('search_bg_color', '#fff');?>;
+        --header-logo-height:<?php echo $logoHeight;?>px;
+        --header-search-br-color:<?php echo $search['border'];?>;
+        --header-search-bg-color:<?php echo $search['background'];?>;
+        --header-search-btn-bg-color:<?php echo $search['btnBg'];?>;
+        --header-search-btn-txt-color:<?php echo $search['btnColor'];?>;
         --header-search-btn-width:70px;
-        --header-search-btn-bg-color:<?php echo option::get('search_btn_bg_color', '#000');?>;
-        --header-search-btn-txt-color:<?php echo option::get('search_btn_txt_color', '#fff');?>;
         --header-item-head-color:<?php echo option::get('header_item_title_color', '#ed860a');?>;
         --header-item-txt-color:<?php echo option::get('header_item_description_color', '#ed860a');?>;
         --header-hotline-color-heading:<?php echo (!empty(Option::get('hotline_color_heading'))) ? Option::get('hotline_color_heading') : '#000';?>;

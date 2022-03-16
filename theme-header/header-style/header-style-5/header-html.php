@@ -7,7 +7,7 @@
 				<h1 style="display: none"><?php echo option::get('general_label');?></h1>
 				<?php } ?>
 				<a href="<?php echo Url::base();?>" title="<?php echo option::get('general_label');?>">
-					<?php Template::img(option::get('logo_header'), option::get('general_label'));?>
+					<?php Template::img($logo, option::get('general_label'));?>
 				</a>
 			</div>
 			<div class="col-md-3">
@@ -31,17 +31,15 @@
 			<div class="col-md-2 text-center">
 				<div class="cart-top row-flex-center" style="justify-content: right">
                     <div class="cart-top__icon">
-                        <a href="gio-hang"><?php Template::img(option::get('header_icon_cart'), __('Giỏ hàng'));?></a>
+                        <a href="gio-hang"><?php Template::img($iconCart, __('Giỏ hàng'));?></a>
                     </div>
                     <div class="cart-top__title">
                         <a href="gio-hang">
                             <p><b><?php echo __('Giỏ hàng');?></b></p>
-                            <p><span class="wcmc-total-items"><?= SCart::totalQty();?></span> <?php echo __('sản phẩm');?></p>
+                            <p><span class="wcmc-total-items"><?= (class_exists('SCart')) ? (class_exists('SCart')) ? SCart::totalQty() : 0 : 0;?></span> <?php echo __('sản phẩm');?></p>
                         </a>
                     </div>
 				</div>
-                <ul name="" id=""><?php echo MultiLanguage::render(['element' => 'div']);?></ul>
-
 			</div>
 		</div>
 	</div>

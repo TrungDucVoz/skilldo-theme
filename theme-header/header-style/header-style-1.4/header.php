@@ -4,11 +4,38 @@ Class ThemeHeaderStyle1_4 {
     public static $path = 'theme-header/header-style/header-style-1.4/';
 
     static function render() {
+        $logo       = Option::get('logo_header');
+        $listItem   = Option::get('header_item');
+
+        if(empty($listItem)) {
+            $listItem = [
+                [
+                    'image' => 'https://cdn.sikido.vn/images/demo/icon-item.png',
+                    'title' => 'GIỜ LÀM VIỆC',
+                    'description' => '08h - 17h hằng ngày'
+                ],
+                [
+                    'image' => 'https://cdn.sikido.vn/images/demo/icon-item.png',
+                    'title' => 'THANH TOÁN',
+                    'description' => 'Tiền mặt chuyển khoản'
+                ],
+                [
+                    'image' => 'https://cdn.sikido.vn/images/demo/icon-item.png',
+                    'title' => 'GIAO NHANH',
+                    'description' => 'Nhanh chóng dễ dàng'
+                ],
+            ];
+        }
+
+        $headerData = [
+            'logo' => (!empty($logo)) ? $logo : 'https://cdn.sikido.vn/images/demo/logo-demo-1.png',
+            'listItem' => $listItem
+        ];
         ?>
         <header class="hidden-xs hidden-sm">
             <!-- top bar -->
             <?php do_action('cle_header_top_bar');
-            Template::partial(self::$path.'header-html');
+            Template::partial(self::$path.'header-html', $headerData);
             ?>
         </header>
         <?php
@@ -61,7 +88,14 @@ Class ThemeHeaderStyle1_4 {
         else if(!empty($gradient)) {
             $css .= 'background:'.$gradient.';';
         }
-        Template::partial(self::$path.'header-css', ['background' => $css]);
+        $logoHeight = (empty(Option::get('logo_height'))) ? '70' : Option::get('logo_height');
+
+        $headerCssData = [
+            'logoHeight' => $logoHeight,
+            'background' => $css,
+        ];
+
+        Template::partial(self::$path.'header-css', $headerCssData);
     }
 
     static function script() { Template::partial(self::$path.'header-script'); }

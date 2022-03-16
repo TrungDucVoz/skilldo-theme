@@ -4,10 +4,16 @@ Class ThemeHeaderStyle3_5 {
     public static $path = 'theme-header/header-style/header-style-3.5/';
 
     static function render() {
+        $logo       = Option::get('logo_header');
+        $iconCart   = Option::get('header_icon_cart');
+        $headerData = [
+            'logo' => (!empty($logo)) ? $logo : 'https://cdn.sikido.vn/images/demo/logo-demo-1.png',
+            'iconCart' => (!empty($iconCart)) ? $iconCart : 'https://cdn.sikido.vn/images/demo/cart-1.png',
+        ];
         ?>
         <header class="hidden-xs hidden-sm">
             <!-- top bar -->
-            <?php do_action('cle_header_top_bar');Template::partial(self::$path.'header-html'); ?>
+            <?php do_action('cle_header_top_bar');Template::partial(self::$path.'header-html', $headerData); ?>
         </header>
         <?php
     }
@@ -59,7 +65,23 @@ Class ThemeHeaderStyle3_5 {
         else if(!empty($gradient)) {
             $css .= 'background:'.$gradient.';';
         }
-        Template::partial(self::$path.'header-css', ['background' => $css]);
+
+        $logoHeight = (empty(Option::get('logo_height'))) ? '50' : Option::get('logo_height');
+
+        $search = [
+            'border'     => (empty(Option::get('search_border_color'))) ? Option::get('theme_color') : Option::get('search_border_color'),
+            'background' => Option::get('search_bg_color', '#fff'),
+            'btnBg'      => (empty(Option::get('search_btn_bg_color'))) ? '#fff' : Option::get('search_btn_bg_color'),
+            'btnColor'   => (empty(Option::get('search_btn_txt_color'))) ? Option::get('theme_color') : Option::get('search_btn_txt_color'),
+        ];
+
+        $headerCssData = [
+            'logoHeight' => $logoHeight,
+            'background' => $css,
+            'search' => $search
+        ];
+
+        Template::partial(self::$path.'header-css', $headerCssData);
     }
 
     static function script() { Template::partial(self::$path.'header-script'); }

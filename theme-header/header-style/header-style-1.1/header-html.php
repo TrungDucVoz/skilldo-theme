@@ -7,7 +7,7 @@
 				<h1 style="display: none"><?php echo option::get('general_label');?></h1>
 				<?php } ?>
 				<a href="<?php echo Url::base();?>" title="<?php echo option::get('general_label');?>">
-					<?php Template::img(option::get('logo_header'), option::get('general_label'));?>
+					<?php Template::img($logo, option::get('general_label'));?>
 				</a>
 			</div>
 			<div class="col-md-6">
@@ -31,8 +31,8 @@
 				<div class="cart-top">
 					<a href="gio-hang" class="btn-cart-top">
 						<div style="position:relative; display:inline-block;">
-							<?php Template::img(option::get('header_icon_cart'),'Giỏ hàng');?>
-							<span class="wcmc-total-items"><?= SCart::totalQty();?></span>
+							<?php Template::img($iconCart,'Giỏ hàng');?>
+							<span class="wcmc-total-items"><?= (class_exists('SCart')) ? SCart::totalQty() : 0;?></span>
 						</div>
 						<span><?php echo __('Giỏ hàng');?></span>
 					</a>

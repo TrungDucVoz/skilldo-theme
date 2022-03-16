@@ -1,6 +1,6 @@
 <style type="text/css">
     :root {
-        --header-logo-height:<?php echo option::get('logo_height');?>px;
+        --header-logo-height:<?php echo $logoHeight;?>px;
         --header-item-head-color:<?php echo option::get('header_item_title_color', '#ed860a');?>;
         --header-item-txt-color:<?php echo option::get('header_item_description_color', '#ed860a');?>;
     }

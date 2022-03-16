@@ -20,20 +20,20 @@
                 </div>
 			</div>
 
-			<div class="col-md-6 text-<?php echo Option::get('logo_position');?> logo">
+			<div class="col-md-6 text-<?php echo $logoPosition;?> logo">
 				<?php if( is_home() ) {?>
 				<h1 style="display: none"><?php echo Option::get('general_label');?></h1>
 				<?php } ?>
 				<a href="<?php echo Url::base();?>" title="<?php echo Option::get('general_label');?>">
-					<?php Template::img(Option::get('logo_header'), Option::get('general_label'));?>
+					<?php Template::img($logo, Option::get('general_label'));?>
 				</a>
 			</div>
 			
 			<div class="col-md-3 text-right">
 				<div class="cart-top">
 					<a href="gio-hang" class="btn-cart-top">
-						<?php Template::img(option::get('header_icon_cart'),'Giỏ hàng');?>
-						<span class="wcmc-total-items"><?= SCart::totalQty();?></span>
+						<?php Template::img($iconCart,'Giỏ hàng');?>
+						<span class="wcmc-total-items"><?= (class_exists('SCart')) ? SCart::totalQty() : 0;?></span>
 					</a>
 				</div>
 			</div>

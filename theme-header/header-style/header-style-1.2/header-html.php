@@ -7,7 +7,7 @@
 				<h1 style="display: none"><?php echo option::get('general_label');?></h1>
 				<?php } ?>
 				<a href="<?php echo Url::base();?>" title="<?php echo option::get('general_label');?>">
-					<?php Template::img(option::get('logo_header'), option::get('general_label'));?>
+					<?php Template::img($logo, option::get('general_label'));?>
 				</a>
 			</div>
 			<div class="col-md-5">
@@ -31,24 +31,24 @@
 
 				<div class="hotline">
 					<div class="hotline__icon">
-						<?php Template::img(option::get('header_icon_hotline'), 'Hotline:'.option::get('contact_phone'));?>
+						<?php Template::img($iconPhone, 'Hotline:'.option::get('contact_phone'));?>
 					</div>
 					<div class="hotline__title">
-						<a href="tel:<?php echo option::get('contact_phone');?>">
+						<a href="tel:<?php echo $phone;?>">
 							<p>HOTLINE</p>
-                            <p class="hotline__phone"><?php echo option::get('contact_phone');?></p>
+                            <p class="hotline__phone"><?php echo $phone;?></p>
 						</a>
 					</div>
 				</div>
 
                 <div class="cart-top">
                     <div class="cart-top__icon">
-                        <a href="gio-hang"><?php Template::img(option::get('header_icon_cart'), 'Giỏ hàng');?></a>
+                        <a href="gio-hang"><?php Template::img($iconCart, 'Giỏ hàng');?></a>
                     </div>
                     <div class="cart-top__title">
                         <a href="gio-hang">
                             <p><b>Giỏ hàng</b></p>
-                            <p><span class="wcmc-total-items"><?= SCart::totalQty();?></span> sản phẩm</p>
+                            <p><span class="wcmc-total-items"><?= (class_exists('SCart')) ? SCart::totalQty() : 0;?></span> sản phẩm</p>
                         </a>
                     </div>
                 </div>

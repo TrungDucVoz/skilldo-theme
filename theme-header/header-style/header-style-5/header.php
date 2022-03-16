@@ -4,10 +4,16 @@ Class ThemeHeaderStyle5 {
     public static $path = 'theme-header/header-style/header-style-5/';
 
     static function render() {
+        $logo = Option::get('logo_header');
+        $iconCart = Option::get('header_icon_cart');
+        $headerData = [
+            'logo' => (!empty($logo)) ? $logo : 'https://cdn.sikido.vn/images/demo/logo-demo-1.png',
+            'iconCart' => (!empty($iconCart)) ? $iconCart : 'https://cdn.sikido.vn/images/demo/cart-1.png',
+        ];
         ?>
         <header class="">
             <!-- top bar -->
-            <?php do_action('cle_header_top_bar'); Template::partial(self::$path.'header-html');?>
+            <?php do_action('cle_header_top_bar'); Template::partial(self::$path.'header-html', $headerData);?>
         </header>
         <?php do_action('cle_header_navigation');
     }
@@ -17,6 +23,7 @@ Class ThemeHeaderStyle5 {
     }
 
     static function css() {
+
         $background = Option::get('header_bg');
 
         if(empty($background)) {
@@ -59,7 +66,33 @@ Class ThemeHeaderStyle5 {
         else if(!empty($gradient)) {
             $css .= 'background:'.$gradient.';';
         }
-        Template::partial(self::$path.'header-css', ['background' => $css]);
+
+        $logoHeight = (empty(Option::get('logo_height'))) ? '70' : Option::get('logo_height');
+
+        $search = [
+            'border'     => Option::get('search_border_color', '#000'),
+            'background' => Option::get('search_bg_color', '#fff'),
+            'btnBg'      => Option::get('search_btn_bg_color', '#000'),
+            'btnColor'   => Option::get('search_btn_txt_color', '#fff'),
+        ];
+
+        $navigation = [
+            'font'        => ((option::get('nav_header_font')) ? option::get('nav_header_font') : option::get('text_font')),
+            'weight'        => option::get('nav_header_font_weight'),
+            'fontSize'        => option::get('nav_header_font_size'),
+            'padding'        => option::get('nav_header_padding'),
+            'background'        => (empty(Option::get('nav_header_bg_color')) ? 'rgba(255,255,255,0)' : Option::get('nav_header_bg_color')),
+            'hoverBackground'   => Option::get('nav_header_bg_color_hover', '#000'),
+            'txtColor'          => Option::get('nav_header_text_color'),
+            'hoverTxtColor'     => Option::get('nav_header_text_color_hover'),
+
+            'subBackground'        => (empty(Option::get('nav_header_sub_bg_color')) ? 'rgba(255,255,255,0)' : Option::get('nav_header_sub_bg_color')),
+            'subHoverBackground'   => Option::get('nav_header_sub_bg_color_hover', '#000'),
+            'subTxtColor'          => Option::get('nav_header_sub_text_color'),
+            'subHoverTxtColor'     => Option::get('nav_header_sub_text_color_hover'),
+        ];
+
+        Template::partial(self::$path.'header-css', ['logoHeight' => $logoHeight, 'background' => $css, 'search' => $search, 'navigation' => $navigation]);
     }
 
     static function script() { Template::partial(self::$path.'header-script'); }

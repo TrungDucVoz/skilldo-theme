@@ -4,7 +4,7 @@ $header_hotline_color_phone = (!empty(option::get('header_hotline_color_phone'))
 ?>
 <style type="text/css">
     :root {
-        --header-logo-height:<?php echo option::get('logo_height');?>px;
+        --header-logo-height:<?php echo $logoHeight;?>px;
         --header-hotline-color-heading:<?php echo $header_hotline_color_heading;?>;
         --header-hotline-color-phone:<?php echo $header_hotline_color_phone;?>;
     }

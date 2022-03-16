@@ -7,7 +7,7 @@
 				<h1 style="display: none"><?php echo option::get('general_label');?></h1>
 				<?php } ?>
 				<a href="<?php echo Url::base();?>" title="<?php echo option::get('general_label');?>">
-					<?php Template::img(option::get('logo_header'), option::get('general_label'));?>
+					<?php Template::img($logo, option::get('general_label'));?>
 				</a>
 			</div>
 			<div class="col-md-5">
@@ -28,7 +28,6 @@
                 </div>
 			</div>
 			<div class="col-md-5 list-item" style="justify-content: right">
-				<?php $listItem = Option::get('header_item');?>
                 <?php if(have_posts($listItem)) {?>
 				<?php foreach ($listItem as $key => $item): ?>
                     <?php
@@ -39,11 +38,10 @@
                     }
                     ?>
 					<div class="item item<?php echo $key;?>">
-
                         <div class="img"><a href="<?php echo $item['url'];?>"><?php Template::img($item['image'], $item['title']);?></a></div>
-                            <div class="title">
-                                <p class="heading"><a href="<?php echo $item['url'];?>"><?php echo $item['title'];?></a></p>
-                            </div>
+                        <div class="title">
+                            <p class="heading"><a href="<?php echo $item['url'];?>"><?php echo $item['title'];?></a></p>
+                        </div>
 					</div>
 				<?php endforeach ?>
                 <?php } ?>

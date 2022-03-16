@@ -3,12 +3,12 @@
 	<div class="container">
 		<div class="row row-flex-center">
 
-			<div class="col-md-3 text-<?php echo option::get('logo_position');?> logo">
+			<div class="col-md-3 text-<?php echo Option::get('logo_position');?> logo">
 				<?php if( is_home() ) {?>
-				<h1 style="display: none"><?php echo option::get('general_label');?></h1>
+				<h1 style="display: none"><?php echo Option::get('general_label');?></h1>
 				<?php } ?>
-				<a href="<?php echo Url::base();?>" title="<?php echo option::get('general_label');?>">
-					<?php Template::img(option::get('logo_header'), option::get('general_label'));?>
+				<a href="<?php echo Url::base();?>" title="<?php echo Option::get('general_label');?>">
+					<?php Template::img($logo, Option::get('general_label'));?>
 				</a>
 			</div>
 
@@ -33,18 +33,18 @@
 			<div class="col-md-4 text-center row-flex-center row-flex-gap">
 				<div class="cart-top">
 					<a href="gio-hang" class="btn-cart-top js_btn_panel__sidebar navigation__item_cart">
-						<?php Template::img(option::get('header_icon_cart'),'Giỏ hàng');?>
-						<span class="wcmc-total-items"><?= SCart::totalQty();?></span>
+						<?php Template::img($iconCart,'Giỏ hàng');?>
+						<span class="wcmc-total-items"><?= (class_exists('SCart')) ? (class_exists('SCart')) ? SCart::totalQty() : 0 : 0;?></span>
 					</a>
 				</div>
                 <div class="hotline">
                     <div class="hotline__icon">
-                        <?php Template::img(option::get('header_icon_hotline'), 'Hotline:'.option::get('contact_phone'));?>
+                        <?php Template::img($iconPhone, 'Hotline:'.Option::get('contact_phone'));?>
                     </div>
                     <div class="hotline__title">
-                        <a href="tel:<?php echo option::get('contact_phone');?>">
+                        <a href="tel:<?php echo $phone;?>">
                             <p>HOTLINE</p>
-                            <p class="hotline__phone"><?php echo option::get('contact_phone');?></p>
+                            <p class="hotline__phone"><?php echo $phone;?></p>
                         </a>
                     </div>
                 </div>

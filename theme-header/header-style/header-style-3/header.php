@@ -4,10 +4,14 @@ Class ThemeHeaderStyle3 {
     public static $path = 'theme-header/header-style/header-style-3/';
 
     static function render() {
+        $logo       = Option::get('logo_header');
+        $headerData = [
+            'logo' => (!empty($logo)) ? $logo : 'https://cdn.sikido.vn/images/demo/logo-demo-1.png',
+        ];
         ?>
         <header class="hidden-xs hidden-sm">
             <!-- top bar -->
-            <?php do_action('cle_header_top_bar');Template::partial(self::$path.'header-html'); ?>
+            <?php do_action('cle_header_top_bar');Template::partial(self::$path.'header-html', $headerData); ?>
         </header>
         <?php
     }
@@ -59,7 +63,14 @@ Class ThemeHeaderStyle3 {
         else if(!empty($gradient)) {
             $css .= 'background:'.$gradient.';';
         }
-        Template::partial(self::$path.'header-css', ['background' => $css]);
+        $logoHeight = (empty(Option::get('logo_height'))) ? '50' : Option::get('logo_height');
+
+        $headerCssData = [
+            'logoHeight' => $logoHeight,
+            'background' => $css,
+        ];
+
+        Template::partial(self::$path.'header-css', $headerCssData);
     }
 
     static function script() { Template::partial(self::$path.'header-script'); }

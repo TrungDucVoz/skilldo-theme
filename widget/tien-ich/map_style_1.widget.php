@@ -31,7 +31,7 @@ class widget_map_style_1 extends widget {
         echo $box['after'];
     }
     function css(){
-        include_once('css/map-style-1.css');
+        include_once('assets/map-style-1.css');
     }
     function default() {
         if(!isset($this->options->box))   $this->options->box = 'container';
