@@ -1,0 +1,144 @@
+.widget_slider_style_8 .row-flex-center {
+    display: flex; flex-wrap: wrap; align-items: center; gap:10px;
+}
+.widget_slider_style_8 .slider_content {
+    overflow: hidden; width: calc(50% - 10px); flex:0 0 calc(50% - 10px);
+    border-radius: 10px; overflow: hidden;
+}
+.widget_slider_style_8 .slider_items, .widget_slider_style_8 .slider_customer {
+    overflow: hidden; width: calc(25% - 5px); flex:0 0 calc(25% - 5px);
+    border-radius: 10px;
+    border:1px solid var(--slider8-border-color);
+}
+.slider-heading {
+    padding:10px;
+    background-color: var(--slider8-heading-bg); color: var(--slider8-heading-txt);
+    text-align: center;
+}
+.slider-heading .heading {
+    font-size: 18px; color: var(--slider8-heading-txt); font-weight: bold;
+    text-align: center; margin-bottom: 0;
+}
+
+.widget_slider_style_8 .item_customer {
+    padding: 10px; border-bottom: 1px solid var(--slider8-border-bottom);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+}
+.widget_slider_style_8 .item_customer p {
+    color: var(--slider8-customer-txt);
+    margin-bottom: 0; font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.widget_slider_style_8 .item_customer .date {
+    color: red;
+}
+
+.widget_slider_style_8 .slider_list_item .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.widget_slider_style_8 .slider_list_thumb {
+    background-color: #fff;
+}
+.widget_slider_style_8 .slider_list_thumb .item {
+    width: 100%;
+    cursor: pointer;
+    background-color: #fff;
+    padding: 10px 10px;
+    outline: none;
+}
+.widget_slider_style_8 .slider_list_thumb .item .heading {
+    font-size: 14px; line-height: 24px;
+    text-align: center;
+    margin: 0;
+    height: 48px; overflow: hidden;
+}
+.widget_slider_style_8 .slider_list_thumb .slick-current.item .heading {
+    color:var(--theme-color);
+}
+.widget_slider_style_8 .slider_list_thumb .slick-list {
+    background-color: #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.widget_slider_style_8 .slider_list_thumb .item {
+    margin-right: 1px;
+}
+.widget_slider_style_8 .slider_list_thumb .slick-list {
+    background-color: #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.widget_slider_style_8 .slider_list_thumb .item {
+    margin-right: 1px;
+}
+
+.widget_slider_style_8 .slider_items .item_right_slider {
+    color: #000;
+    height: auto!important;
+    padding: 11px 10px; border-bottom: 1px solid var(--slider8-border-bottom);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.widget_slider_style_8 .slider_items .item_right_slider .img {
+    width: 25%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-right: 10px;
+}
+.widget_slider_style_8 .slider_items .item_right_slider .img img {
+    height: 35px;
+}
+.widget_slider_style_8 .slider_items .item_right_slider .content {
+    width: 75%;
+    padding-left: 10px;
+}
+.widget_slider_style_8 .slider_items .item_right_slider .content p.title {
+    font-size: 14px;
+    line-height: 20px; margin-bottom: 0;
+    margin-top: -2px; font-weight: bold;
+    color: var(--slider8-item-txt);
+}
+@media(max-width: 1200px) {
+    .widget_slider_style_8 .slider_items .item_right_slider {
+        padding:5px;
+    }
+    .widget_slider_style_8 .slider_items .item_right_slider .content p.title {
+        font-size: 12px;
+    }
+    .widget_slider_style_8 .item_customer {
+        padding:5px;
+    }
+}
+@media(max-width: 768px) {
+    .widget_slider_style_8 .slider_content { width: 100%; flex:0 0 100%;}
+    .widget_slider_style_8 .slider_right { width: 100%; flex:0 0 100%;}
+}
+@media (max-width:600px) {
+    .widget_slider_style_8 .slider_items, .widget_slider_style_8 .slider_customer {
+        display: none;
+    }
+
+    .widget_slider_style_8 .slider_list_thumb .item {
+        padding: 10px;
+    }
+    .widget_slider_style_8 .slider_list_thumb .item .heading {
+        font-size: 13px; line-height: 20px;
+        height: 40px;
+    }
+}

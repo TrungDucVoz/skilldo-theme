@@ -1,0 +1,56 @@
+.widget_feedback_style_2 .box-content {
+    position: relative;margin: 20px auto;
+    width:800px;max-width: 100%;
+}
+.widget_feedback_style_2 .feedback-item {
+    position: relative;
+    padding-bottom: 20px;
+}
+.widget_feedback_style_2 .layer1 {
+    background: #f8f8f8;
+    position: absolute;
+    left: 30px;
+    bottom: 0px;
+    width: calc(100% - 55px);
+    height: 100%;
+    z-index: -1;border-radius: 5px;
+    box-shadow: 3px 3px 13px 0 rgba(0,0,0,.1);
+}
+.widget_feedback_style_2 .item {
+    background-color: #fff; border-radius: 5px; padding: 10px;
+    box-shadow: 3px 3px 13px 0 rgba(0,0,0,.1); margin: 10px;
+}
+.widget_feedback_style_2 .feedback-info {
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 100%;
+}
+.widget_feedback_style_2 .item .avatar {
+    float: left; width: 100px;
+}
+.widget_feedback_style_2 .item .avatar img {
+    width:100px; height: 100px; object-fit: cover;
+    border-radius: 50%;
+    display: inline-block;
+}
+.widget_feedback_style_2 .item .title {
+    text-align: left;
+    float: left; width: calc(100% - 100px); padding-left: 10px;
+}
+.widget_feedback_style_2 .item .title .feedback-name {
+    text-align: left; font-size: 18px; font-weight: bold;
+}
+.widget_feedback_style_2 .item .title .feedback-office {
+    font-size: 13px;
+}
+.widget_feedback_style_2 .item .feedback-content {
+    margin: 20px auto;
+    width:500px;
+    max-width: 100%;
+    position: relative;
+    padding-left: 40px;
+}
+.widget_feedback_style_2 .item .feedback-content blockquote {
+    position: absolute; left: -30px;
+}
+.widget_feedback_style_2 .item .feedback-content blockquote img { width: 30px;}

@@ -1,0 +1,74 @@
+:root {
+    --prs8-tab-bg:#fff;
+    --prs8-tab-color:#000;
+    --prs8-tab-active-color:#fff;
+    --prs8-tab-active-bg:var(--theme-color);
+}
+.widget_product_style_16 .product_style_16_box {
+    border:2px solid var(--pr16-tab-border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.widget_product_style_16 .product_style_16_header {
+    border-bottom: 2px solid var(--pr16-tab-border);
+    margin-bottom: 10px;
+}
+.widget_product_style_16 .product_style_16_category_list {
+    background: transparent;
+    margin-bottom: 0px;
+    list-style-type: none;
+    overflow: hidden;
+    padding: 5px 0;
+}
+.widget_product_style_16 .product_style_16_category_list li {
+    float: left;
+    padding: 0;
+    border-bottom: 0;
+    display: inline-block;
+    position: relative;
+    flex: none;
+    width: calc(100%/3);
+}
+.widget_product_style_16 .product_style_16_category_list li:nth-child(2) {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+.widget_product_style_16 .product_style_16_category_list li a {
+    color:var(--pr16-tab-color);
+    padding: 10px 20px;
+    display: block;
+    font-size: 18px; font-weight: bold;
+    transition: all 0.5s;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+.widget_product_style_16 .product_style_16_category_list li a.active,
+.widget_product_style_16 .product_style_16_category_list li a:hover {
+    color: var(--pr16-tabA-color);
+}
+.widget_product_style_16 .product_style_16_content  {
+    padding:0 10px 10px 10px;
+}
+.widget_product_style_16 .product_style_16_content a.more-link {
+    display: inline-block;
+    font-size: 15px;
+    margin: 10px 0;
+}
+@media (max-width: 600px) {
+    .widget_product_style_16 .product_style_16_category_list {
+        position: relative;
+        top:0; left: 0;
+        display: flex;
+        overflow-x: auto;
+        -ms-scroll-snap-type: x proximity;
+        scroll-snap-type: x proximity;
+        gap: 1rem;
+    }
+    .widget_product_style_16 .product_style_16_category_list li {
+        display: inline-block;
+        scroll-snap-stop: normal;
+        scroll-snap-align: start;
+        flex: 0 0 auto;
+        width: auto;
+    }
+}

@@ -1,0 +1,73 @@
+.widget_feedback_style_6 .row-flex-center {
+    display: flex; flex-wrap: wrap; flex-direction: row;
+    align-items: center;
+    margin:30px auto 30px auto;
+}
+.widget_feedback_style_6 .row-flex-center.text_img {
+    flex-direction: row-reverse;
+}
+.widget_feedback_style_6 .feedback-image, .widget_feedback_style_6 .feedback-content-box {
+    flex: 0 0 50%; width: 50%;
+}
+.widget_feedback_style_6 .feedback-image {
+    transform: translateY(-30px);
+}
+.widget_feedback_style_6 .feedback-image img {
+    width:100%;
+}
+.widget_feedback_style_6 .feedback-content-box {
+    background-color: var(--fbs6-feedback-bg); padding:20px;
+    transform: translateY(30px);
+}
+.widget_feedback_style_6 .box-content {
+    position: relative;margin: 20px auto; max-width: 100%;
+}
+.widget_feedback_style_6 .item .info {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+.widget_feedback_style_6 .item .info .avatar {
+    text-align: left; width:60px; height: 60px;
+    position: relative;
+}
+.widget_feedback_style_6 .item .info .avatar:before{
+    position: absolute;
+    content: '';
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #f1f1f1;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+}
+.widget_feedback_style_6 .item .info .avatar img {
+    width:60px; height: 60px; object-fit: cover;
+    border-radius: 50%;
+    display: inline-block;
+}
+.widget_feedback_style_6 .item .info .title {
+    text-align: left;
+    width: calc(100% - 60px);
+    padding-left: 15px;
+}
+.widget_feedback_style_6 .item .info .title .feedback-name {
+    font-size: 16px; font-weight: bold; margin: 10px 0; color: var(--fbs6-feedback-name);
+}
+
+.widget_feedback_style_6 .item .title .feedback-office {
+    font-size: 13px; color: var(--fbs6-feedback-office);
+}
+.widget_feedback_style_6 .item .feedback-content {
+    color: var(--fbs6-feedback-content);
+    border-radius: 5px;
+}
+@media(max-width: 768px) {
+    .widget_feedback_style_6 .feedback-image, .widget_feedback_style_6 .feedback-content-box {
+        flex: 0 0 100%; width: 100%;transform: translateY(0px);
+    }
+    .widget_feedback_style_6 .row-flex-center {
+        margin:0px auto 0px auto;
+    }
+}

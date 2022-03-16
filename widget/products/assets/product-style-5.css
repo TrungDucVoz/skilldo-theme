@@ -1,0 +1,57 @@
+:root {
+    --prs5-header:50px;
+    --prs5-header-bg:#D9D9D9;
+    --prs5-arrow-color:#fff;
+}
+.product_style_5_header {
+    overflow: hidden;
+}
+.product_style_5_header_left {
+    background-color: var(--theme-color);
+}
+.product_style_5_header_left .heading { margin: 0; padding:0; }
+.product_style_5_header_left .heading .header {
+    margin: 0; padding:0; height: var(--prs5-header); line-height: var(--prs5-header); font-size: 15px; text-align: left;
+}
+.product_style_5_header_right { background-color: var(--prs5-header-bg); height: var(--prs5-header); }
+.product_style_5_header_right .arrow_box { height: var(--prs5-header); line-height: var(--prs5-header); position: relative; padding:10px; }
+.product_style_5_header_right .arrow_box .arrow {
+    position: absolute;
+    top: 5px; right: 0;
+    z-index: 99;
+    color: var(--prs5-arrow-color);
+    border:1px solid var(--prs5-arrow-color);
+    cursor: pointer;
+    height: calc(var(--prs5-header) - 10px); width: calc(var(--prs5-header) - 10px); line-height: calc(var(--prs5-header) - 10px);
+    text-align: center; padding: 0;
+    font-size: 15px;
+}
+.product_style_5_header_right .arrow_box .arrow.prev {
+    right: var(--prs5-header);
+}
+.product_style_5_category {
+    background-color: #fff; min-height: 350px;
+}
+.product_style_5_category ul {
+    list-style: none; padding: 20px 0 20px 20px;
+
+}
+.product_style_5_category ul li a{
+    color: #000; padding:5px 0; display: block;
+}
+.product_style_5_category ul li a:hover, .product_style_5_category ul li a.active{
+    color: var(--theme-color); font-weight: bold;
+}
+.product_style_5_header_right .js_show_tab {
+    position: absolute; top:5px; left: 5px; display: none; z-index: 99;
+}
+.product_style_5_header_right .js_show_tab .js_btn_show_tab {
+    display: inline-block;color:#000; height: calc(var(--prs5-header) - 10px); line-height:calc(var(--prs5-header) - 10px); padding:0 10px;
+    background-color: #fff; border-radius: 5px;
+}
+@media (max-width: 600px) {
+    .product_style_5_header_right .js_show_tab { display: block; }
+    .product_style_5_category {
+        display: none;
+    }
+}

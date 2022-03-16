@@ -1,0 +1,32 @@
+.widget_map_style_1 {
+    overflow: hidden;
+}
+.widget_map_style_1 iframe {
+    height: 400px;
+}
+.widget_map_style_1 .boxContent {
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+}
+.widget_map_style_1 .boxContent .maps,
+.widget_map_style_1 .boxContent .content {
+    border: 3px solid var(--map1-border-color);
+}
+.widget_map_style_1 .boxContent .content .header-title {
+    background-color: var(--map1-border-color);
+    padding: 15px 5px;
+    margin: 0;
+}
+.widget_map_style_1 .boxContent .content .header-title .header {
+    color: #fff;
+}
+.widget_map_style_1 .boxContent .content .br {
+    padding: 15px;
+    height: calc(400px - 50px);
+    overflow: auto;
+}
+@media (max-width: 767px) {
+    .widget_map_style_1 .boxContent {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,20 @@
+<?php
+Class ThemeTopBarStyle2 {
+    static function render() {
+        if(Option::get('top_bar_public') == 1) include_once 'top-bar-html.php';
+    }
+    static function css() {
+        include 'top-bar-css.php';
+    }
+    static function options() {
+        include 'top-bar-option.php';
+    }
+}
+
+if(!Admin::is()) {
+    add_action('cle_header_top_bar', 'ThemeTopBarStyle2::render');
+    add_action('theme_custom_css_no_tag', 'ThemeTopBarStyle2::css');
+}
+else {
+    add_action('theme_option_setup', 'ThemeTopBarStyle2::options', 22);
+}
