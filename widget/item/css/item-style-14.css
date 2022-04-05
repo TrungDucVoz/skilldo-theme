@@ -1,0 +1,109 @@
+.widget_item_style_14 .row-flex {
+    position: relative;
+    display: grid;
+    grid-template-columns: var(--item14-per-row);
+    gap:30px;
+}
+.widget_item_style_14 .item {
+    margin-bottom: 15px;
+    margin-top: 45px;
+    outline: none;
+    position: relative;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.15);
+    background-color: var(--item14-bg);
+    padding: 60px 40px;
+    transition: all 0.3s;
+}
+.widget_item_style_14 .item a {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.widget_item_style_14 .item .number-box {
+    position: absolute;
+    top: -95px;
+    left: 0px;
+}
+.widget_item_style_14 .item .number-box .number {
+    padding: 28px 12px;
+    font-size: 52px;
+    font-weight: 500;
+    background-color: var(--item14-number-bg);
+    color: var(--item14-number);
+    transition: .3s ease;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.widget_item_style_14 .item .title {
+    text-align: left;
+}
+.widget_item_style_14 .item .heading {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 5px;
+    color: var(--item14-title);
+    text-transform: uppercase;
+}
+.widget_item_style_14 .item p {
+    font-size: 14px;
+    color: var(--item14-des);
+}
+.widget_item_style_14 .item:before, .widget_item_style_14 .item:after {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: all .5s;
+    -webkit-transform: scale(.1);
+    transform: scale(.1);
+    z-index: 0;
+}
+.widget_item_style_14 .item:before {
+    background-image: url('/views/theme-store/widget/item/image/item-before.png');
+    height: 100%;
+    top: -30px;
+    left: -30px;
+    width: 100%;
+}
+.widget_item_style_14 .item:after {
+    background-image: url('/views/theme-store/widget/item/image/item-after.png');
+    height: 290px;
+    bottom: -40px;
+    right: -30px;
+    width: 250px;
+}
+.widget_item_style_14 .item.active:after, .widget_item_style_14 .item.active:before,
+.widget_item_style_14 .item:hover:after, .widget_item_style_14 .item:hover:before {
+    opacity: 1;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+}
+.widget_item_style_14 .item:hover {
+    background-color: var(--item14-bg-hover);
+}
+.widget_item_style_14 .item:hover .heading {
+    color: var(--item14-title-hover);
+}
+.widget_item_style_14 .item:hover p {
+    color: var(--item14-des-hover);
+}
+.widget_item_style_14 .item:hover .number-box .number {
+    background-color: var(--item14-number-bg-hover);
+    color: var(--item14-number-hover);
+}
+@media (max-width: 1000px) {
+    .widget_item_style_14 .row-flex {
+        grid-template-columns: var(--item14-per-row-tablet);
+        gap:30px;
+    }
+}
+@media (max-width: 600px) {
+    .widget_item_style_14 .row-flex {
+        grid-template-columns: var(--item14-per-row-mobile);
+        gap:30px;
+    }
+}

@@ -1,0 +1,82 @@
+.widget_about_style_12 .row-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.widget_about_style_12 .about-content {
+    position: relative;
+    z-index: 2;
+}
+.widget_about_style_12 .about-content .content {
+    background-color: #fff;
+}
+.widget_about_style_12 .about-content ul {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    list-style-type: none;
+    margin-bottom: 0;
+    margin-top: 5px;
+    border: 0;
+}
+.widget_about_style_12 .about-content ul li {
+    flex: 1;
+    position: relative;
+    margin-bottom: 0;
+}
+.widget_about_style_12 .about-content .nav-tabs>li>a {
+    border-radius: 0;
+    border: 1px solid var(--about12-tab-border);
+    transition: .3s ease;
+    color: var(--about12-tab-txt);
+    background: var(--about12-tab-bg);
+    margin-right: 0;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 20px 15px;
+    font-size: 18px;
+}
+.widget_about_style_12 .about-content ul li {
+    margin-left: -1px;
+}
+.widget_about_style_12 .about-content ul::before, .widget_about_style_12 .about-content ul::after {
+    display: none;
+}
+.widget_about_style_12 .about-content .nav-tabs>li.active { z-index:99;}
+.widget_about_style_12 .about-content .nav-tabs>li.active>a,
+.widget_about_style_12 .about-content .nav-tabs>li.active>a:hover,
+.widget_about_style_12 .about-content .nav-tabs>li.active>a:focus {
+    background-color: var(--about12-tab-bg-active);
+    color: var(--about12-tab-txt-active);
+    border-color: var(--about12-tab-border-active);
+}
+
+.widget_about_style_12 .about-content .tab-content {
+    background-color: #fff;
+    color: var(--about12-tab-txt-active);
+    padding: 24px 0px;
+    position: relative;
+}
+@media (max-width: 1220px) {
+    .widget_about_style_12 .about-content .content {
+        width:600px;
+    }
+}
+@media (max-width: 768px) {
+    .widget_about_style_12 .about-content .content {
+        position: unset;
+        transform: none;
+        box-shadow: none;
+    }
+}
+@media screen and (max-width: 720px) {
+    .widget_about_style_12 .about-content .content {
+        padding: 0;
+        width: 100%;
+        background-color: transparent;
+        overflow: hidden;
+    }
+}

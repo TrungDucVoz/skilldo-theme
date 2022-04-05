@@ -21,14 +21,14 @@
     z-index: 0;
 }
 .widget_item_style_1 .item:before {
-    background-image: url('https://samartheme1.vercel.app/_next/static/media/pattern5.938308d28315d26e13706ff6c39af6ab.png');
+    background-image: url('/views/theme-store/widget/item/image/item-before.png');
     height: 100%;
     top: -30px;
     left: -30px;
     width: 100%;
 }
 .widget_item_style_1 .item:after {
-    background-image: url('https://samartheme1.vercel.app/_next/static/media/pattern6.78d4aed68e55621bbc5b4e82453a07cf.png');
+    background-image: url('/views/theme-store/widget/item/image/item-after.png');
     height: 290px;
     bottom: -40px;
     right: -30px;

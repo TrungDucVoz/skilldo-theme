@@ -39,6 +39,7 @@ if(!function_exists('theme_add_assets'))  {
         Template::asset()->location('header')->add('mmenu', $add_on.'mmenu/mmenu.css', ['minify' => true]);
         Template::asset()->location('header')->add('ToastMessages',    PLUGIN.'/ToastMessages/jquery.toast.css', ['minify' => true]);
         Template::asset()->location('header')->add('animation', $assets.'css/animation.css', ['minify' => true]);
+        Template::asset()->location('header')->add('swiper', $add_on.'swiper/swiper.min.css', ['minify' => true]);
         Template::asset()->location('header')->add('style', $assets.'css/style.css', ['minify' => true]);
 
         Template::asset()->location('footer')->add('bootstrap', $add_on.'bootstrap-3.3.7/js/bootstrap.min.js', ['minify' => true]);
@@ -53,6 +54,7 @@ if(!function_exists('theme_add_assets'))  {
         Template::asset()->location('footer')->add('ToastMessages',  PLUGIN.'/ToastMessages/jquery.toast.js', ['minify' => true]);
         Template::asset()->location('footer')->add('script', $assets.'js/script.js', ['minify' => true]);
         Template::asset()->location('footer')->add('lazy', $add_on.'lazy/jquery.lazy.min.js', ['minify' => true]);
+        Template::asset()->location('footer')->add('swiper', $add_on.'swiper/swiper.min.js', ['minify' => false]);
         return true;
     }
     add_action('init', 'theme_add_assets');

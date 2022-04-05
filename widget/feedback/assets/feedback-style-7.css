@@ -1,0 +1,85 @@
+.widget_feedback_style_7 .feedback-content-box {
+}
+.widget_feedback_style_7 .box-content {
+    position: relative;margin: 20px auto; max-width: 100%;
+}
+.widget_feedback_style_7 .item {
+    border:2px solid var(--fbs7-border-color); border-radius: 5px;
+    padding:15px; margin: 0 10px;
+}
+.widget_feedback_style_7 .item .feedback-heading {
+    display: grid;
+    grid-template-columns: 100px auto;
+    align-items: center;
+}
+.widget_feedback_style_7 .item .feedback-heading .avatar {
+    text-align: center;
+}
+.widget_feedback_style_7 .item .feedback-heading .avatar img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: inline-block;
+}
+.widget_feedback_style_7 .item .feedback-heading .title {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.widget_feedback_style_7 .item .feedback-heading .title:before {
+    content: '“';
+    position: absolute;
+    color: var(--fbs7-feedback-slogan);
+    font-size: 50px;
+    top: 20%;
+    left: 8%;
+}
+.widget_feedback_style_7 .item .feedback-heading .title p {
+    margin: 0;
+    color: var(--fbs7-feedback-slogan);
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+}
+.widget_feedback_style_7 .item .feedback-content {
+    margin: 20px 0; color: var(--fbs7-feedback-content);
+}
+.widget_feedback_style_7 .item .feedback-content p {
+    color: var(--fbs7-feedback-content);
+}
+.widget_feedback_style_7 .item .feedback-footer {
+    position: relative;padding-left: 20px;
+}
+.widget_feedback_style_7 .item .feedback-footer:before {
+    position: absolute;
+    content: '';
+    background-color: var(--fbs7-feedback-slogan);
+    width: 5px;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.widget_feedback_style_7 .item .feedback-footer .feedback-name {
+    text-align: left;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 0;
+    color: var(--fbs7-feedback-name);
+}
+.widget_feedback_style_7 .item .feedback-footer .feedback-office {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--fbs7-feedback-office);
+}
+.widget_feedback_style_7 .item .feedback-footer:after {
+    position: absolute;
+    content: '”';
+    color: var(--fbs7-feedback-slogan);
+    font-size: 50px;
+    bottom: 100%;
+    transform: translateY(50%);
+    right: 0;
+}
