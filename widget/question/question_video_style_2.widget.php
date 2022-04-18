@@ -215,17 +215,19 @@ class widget_question_video_2 extends widget {
             }
             else {
                 $galleries =  Gallery::getsItem((isset($this->options->gallery->gallery)) ? $this->options->gallery->gallery : []);
-                foreach ($galleries as &$item) {
-                    if ($item->type == 'youtube') {
-                        $item->url      = $item->value;
-                        $item->image    = Template::imgLink($item->value);
+                if(have_posts($galleries)) {
+                    foreach ($galleries as &$item) {
+                        if ($item->type == 'youtube') {
+                            $item->url = $item->value;
+                            $item->image = Template::imgLink($item->value);
+                        }
+                        if ($item->type == 'image') {
+                            $item->url = Gallery::getItemMeta($item->id, 'url', true);
+                            $item->image = $item->value;
+                        }
+                        $item->title = Gallery::getItemMeta($item->id, 'title', true);
+                        $this->options->galleries = $item;
                     }
-                    if ($item->type == 'image') {
-                        $item->url      = Gallery::getItemMeta($item->id, 'url', true);
-                        $item->image    = $item->value;
-                    }
-                    $item->title    = Gallery::getItemMeta($item->id, 'title', true);
-                    $this->options->galleries = $item;
                 }
             }
         }

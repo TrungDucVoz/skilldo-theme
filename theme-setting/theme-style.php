@@ -27,7 +27,8 @@ if(!function_exists('theme_add_assets'))  {
             Template::asset()->location('header')->add('font-awesome', PLUGIN.'/font-awesome/css/all.min.css', ['minify' => false, 'path' => ['webfonts' => Url::base().'scripts/font-awesome']]);
         }
         Template::asset()->location('header')->add('reset', $assets.'css/reset.css', ['minify' => true]);
-        Template::asset()->location('header')->add('bootstrap', $add_on.'bootstrap-3.3.7/css/bootstrap.min.css', ['minify' => true]);
+        Template::asset()->location('header')->add('bootstrap', $add_on.'bootstrap-5.1.3/css/bootstrap.min.css', ['minify' => true]);
+        Template::asset()->location('header')->add('bootstrap', $add_on.'bootstrap-3.4.1/css/bootstrap.min.css', ['minify' => true]);
         Template::asset()->location('header')->add('dropdownhover', $add_on.'bootstrap-dropdownhover/bootstrap-dropdownhover.min.css', ['minify' => true]);
         Template::asset()->location('header')->add('owlcarousel2', $add_on.'owlcarousel2-2.3.4/assets/owl.carousel.min.css', ['minify' => true]);
         Template::asset()->location('header')->add('owlcarousel2', $add_on.'owlcarousel2-2.3.4/assets/owl.theme.default.min.css', ['minify' => true]);
@@ -42,7 +43,8 @@ if(!function_exists('theme_add_assets'))  {
         Template::asset()->location('header')->add('swiper', $add_on.'swiper/swiper.min.css', ['minify' => true]);
         Template::asset()->location('header')->add('style', $assets.'css/style.css', ['minify' => true]);
 
-        Template::asset()->location('footer')->add('bootstrap', $add_on.'bootstrap-3.3.7/js/bootstrap.min.js', ['minify' => true]);
+        Template::asset()->location('footer')->add('bootstrap', $add_on.'bootstrap-5.1.3/js/bootstrap.bundle.min.js', ['minify' => true]);
+        Template::asset()->location('footer')->add('bootstrap', $add_on.'bootstrap-3.4.1/js/bootstrap.min.js', ['minify' => true]);
         Template::asset()->location('footer')->add('jquery-ui', $assets.'js/jquery-ui-1.9.1.min.js', ['minify' => true]);
         Template::asset()->location('footer')->add('aos', $add_on.'aos/aos.js', ['minify' => true]);
         Template::asset()->location('footer')->add('dropdownhover', $add_on.'bootstrap-dropdownhover/bootstrap-dropdownhover.js', ['minify' => true]);

@@ -1,29 +1,48 @@
 <?php
 class widget_item_style_1 extends widget {
+
     function __construct() {
         parent::__construct('widget_item_style_1', 'Item 1', ['container' => true, 'position'  => 'right']);
         add_action('theme_custom_css', array( $this, 'css'), 10);
         $this->tags = ['item'];
         $this->author = 'SKDSoftware Dev Team';
     }
+
     function form( $left = [], $right = []) {
-        $left[] = array('field' => 'item', 'type' => 'widget_item_style_1::inputItem', 'arg' => ['number' => 2]);
+
+        $left[] = ['field' => 'itemHeadingColor', 'type' => 'color', 'label' => 'Màu tiêu đề item', 'after' => '<div class="builder-col-4 col-md-4 form-group group">', 'before'=> '</div>'];
+        $left[] = ['field' => 'itemDesColor', 'type' => 'color', 'label' => 'Màu mô tả item', 'after' => '<div class="builder-col-4 col-md-4 form-group group">', 'before'=> '</div>'];
+        $left[] = ['field' => 'itemHeight', 'type' => 'number', 'label' => 'Chiều cao icon', 'after' => '<div class="builder-col-4 col-md-4 form-group group">', 'before'=> '</div>'];
+
+        $left[] = ['field' => 'item', 'type' => 'repeater', 'label' => 'Danh sách item', 'fields' => [
+            ['name' => 'image', 'type' => 'image', 'label' => __('Icon'), 'col' => 4],
+            ['name' => 'title', 'type' => 'text',  'label' => __('Tiêu đề'), 'col' => 4, 'language' => true],
+            ['name' => 'description', 'type' => 'textarea', 'label' => __('Mô tả'), 'col' => 4, 'language' => true],
+            ['name' => 'url', 'type' => 'text', 'label' => __('Liên kết'), 'col' => 6],
+            ['name' => 'animate', 'type' => 'select', 'label' => __('Hiệu ứng'), 'options' => animate_css_option(), 'col' => 6],
+        ]];
+
+        $right[] = ['field' => 'per', 'label' =>'Số item/hàng (Desktop)', 'type' => 'col', 'value' => 3, 'args' => ['min'=>1, 'max' => 5]];
+        $right[] = ['field' => 'perTablet', 'label' =>'Số item/hàng (Tablet)', 'type' => 'col', 'value' => 3, 'args' => ['min'=>1, 'max' => 4]];
+        $right[] = ['field' => 'perMobile', 'label' =>'Số item/hàng (Mobile)', 'type' => 'col', 'value' => 3, 'args' => ['min'=>1, 'max' => 2]];
+
         parent::form($left, $right);
     }
     function widget() {
         $box  = $this->container_box('widget_item_style_1');
         echo $box['before'];
+        $number = 0;
         ThemeWidget::heading($this->name, (isset($this->options->heading)) ? $this->options->heading : [], '.js_'.$this->key.'_'.$this->id);
         ?>
         <div class="row-flex">
         <?php foreach ($this->options->item as $key => $item) { ?>
-            <div class="item item<?php echo $key;?>" data-aos-delay="<?php echo $key*300;?>" data-aos="<?php echo $item['animate'];?>" data-aos-duration="2000">
+            <div class="item item<?php echo $key;?>" data-aos-delay="<?php echo $number++*100;?>" data-aos="<?php echo $item['animate'];?>" data-aos-duration="2000">
                 <a href="<?php echo $item['url'];?>" title="<?php echo $item['title'];?>">
                     <div class="img">
                         <?php Template::img($item['image'], $item['title']);?>
                     </div>
                     <div class="title">
-                        <h3><?php echo $item['title'];?></h3>
+                        <p class="heading"><?php echo $item['title'];?></p>
                         <?php if(!empty($item['description'])) {?>
                         <p class="description"><?php echo $item['description'];?></p>
                         <?php } ?>
@@ -32,28 +51,48 @@ class widget_item_style_1 extends widget {
             </div>
         <?php } ?>
         </div>
+        <style>
+            .js_widget_item_style_1_<?php echo $this->id;?>.widget_item_style_1 {
+                --item1-title:<?php echo (!empty($this->options->itemHeadingColor)) ? $this->options->itemHeadingColor : '#000';?>;
+                --item1-des:<?php echo (!empty($this->options->itemDesColor)) ? $this->options->itemDesColor : '#8a8b8c';?>;
+                --item1-height:<?php echo (!empty($this->options->itemHeight)) ? $this->options->itemHeight : '60';?>px;
+
+                --item1-per-row:<?php echo $this->options->template;?>;
+                --item1-per-row-tablet:<?php echo $this->options->templateTablet;?>;
+                --item1-per-row-mobile:<?php echo $this->options->templateMobile;?>;
+            }
+        </style>
         <?php echo $box['after'];
     }
     function default() {
+        if(!isset($this->options->per)) $this->options->per = 3;
+        $this->options->template = '';
+        for($i = 0; $i < $this->options->per; $i++) $this->options->template .= '1fr ';
+        if(!isset($this->options->perTablet)) $this->options->perTablet = 2;
+        $this->options->templateTablet = '';
+        for($i = 0; $i < $this->options->perTablet; $i++) $this->options->templateTablet .= '1fr ';
+        if(!isset($this->options->perMobile)) $this->options->perMobile = 2;
+        $this->options->templateMobile = '';
+        for($i = 0; $i < $this->options->perMobile; $i++) $this->options->templateMobile .= '1fr ';
         if(!isset($this->options->box)) $this->options->box = 'container';
         if(empty($this->options->item)) {
             $this->options->item    = [];
             $this->options->item[0] = [
-                'image'         =>  'http://cdn.sikido.vn/images/widgets/icons-1.png',
+                'image'         =>  'http://cdn.sikido.vn/images/widgets/set-icon-001.svg',
                 'title'         =>  'Tiêu đề item 1',
                 'url'           =>  'https://sikido.vn',
                 'animate'       =>  'fade',
                 'description'   =>  'Nội dung mô tả của item 1',
             ];
             $this->options->item[1] = [
-                'image'         =>  'http://cdn.sikido.vn/images/widgets/icons-2.png',
+                'image'         =>  'http://cdn.sikido.vn/images/widgets/set-icon-002.svg',
                 'title'         =>  'Tiêu đề item 2',
                 'url'           =>  'https://sikido.vn',
                 'animate'       =>  'fade',
                 'description'   =>  'Nội dung mô tả của item 2',
             ];
             $this->options->item[2] = [
-                'image'         =>  'http://cdn.sikido.vn/images/widgets/icons-3.png',
+                'image'         =>  'http://cdn.sikido.vn/images/widgets/set-icon-003.svg',
                 'title'         =>  'Tiêu đề item 3',
                 'url'           =>  'https://sikido.vn',
                 'animate'       =>  'fade',
@@ -82,58 +121,12 @@ class widget_item_style_1 extends widget {
     }
     function css() { include_once('css/item-style-1.css'); }
     function update($new_instance, $old_instance) {
-        if(isset($new_instance->options['item'])) {
-            foreach ($new_instance->options['item'] as $key => &$item) {
+        if(isset($new_instance['options']->item)) {
+            foreach ($new_instance['options']->item as $key => &$item) {
                 $item['image'] = FileHandler::handlingUrl($item['image']);
             }
         }
         return $new_instance;
-    }
-    static function inputItem($param, $value = []) {
-        if(!have_posts($value)) $value = [];
-        $value_default = ['image' => '', 'title' => '', 'url' => '', 'animate' => '', 'description' => ''];
-        //Số Lượng item
-        $number = (isset($param->arg['number'])) ? (int)$param->arg['number'] : 1;
-        $output = '';
-        $Form = new FormBuilder();
-        for ( $i = 0; $i <= $number; $i++ ) {
-            if(!isset($value[$i]) || !is_array($value[$i])) $value[$i] = [];
-            $value[$i] = array_merge($value_default, $value[$i]);
-            $output .= '<label for="name" class="control-label">Item '.($i+1).'</label>';
-            $output .= '<div class="stote_wg_item">';
-            $Form->add($param->field.'['.$i.'][image]', 'image', [ 'label' => 'Hình ảnh',
-                'after' => '<div class="col-md-4"><div class="form-group group">', 'before' => '</div></div>'
-            ], $value[$i]['image']);
-            $Form->add($param->field.'['.$i.'][title]', 'text', [ 'label' => 'Tiêu đề',
-                'after' => '<div class="col-md-4"><div class="form-group group">', 'before' => '</div></div>'
-            ], $value[$i]['title']);
-            $Form->add($param->field.'['.$i.'][description]', 'text', [ 'label' => 'Mô tả',
-                'after' => '<div class="col-md-4"><div class="form-group group">', 'before' => '</div></div>'
-            ], $value[$i]['description']);
-            if(Language::hasMulti()) {
-                foreach (Language::list() as $lang_key => $lang_val) {
-                    if($lang_key == Language::default()) continue;
-                    $value[$i]['title_'.$lang_key] = (!empty($value[$i]['title_'.$lang_key])) ? $value[$i]['title_'.$lang_key] : '';
-                    $value[$i]['description_'.$lang_key] = (!empty($value[$i]['description_'.$lang_key])) ? $value[$i]['description_'.$lang_key] : '';
-                    $Form->add($param->field.'['.$i.'][title_'.$lang_key.']', 'text', [ 'label' => 'Tiêu đề ('.$lang_val['label'].')',
-                        'after' => '<div class="col-md-4"><div class="form-group group">', 'before' => '</div></div>'
-                    ], $value[$i]['title_'.$lang_key]);
-                    $Form->add($param->field.'['.$i.'][description_'.$lang_key.']', 'text', [ 'label' => 'Mô tả ('.$lang_val['label'].')',
-                        'after' => '<div class="col-md-4"><div class="form-group group">', 'before' => '</div></div>'
-                    ], $value[$i]['description_'.$lang_key]);
-                }
-            }
-            $Form->add($param->field.'['.$i.'][url]', 'text', ['label' => 'Liên kết',
-                'after' => '<div class="col-md-4"><div class="form-group group">', 'before' => '</div></div>'
-            ], $value[$i]['url']);
-            $Form->add($param->field.'['.$i.'][animate]', 'select', ['label' => 'Hiệu ứng hiển thị',
-                'options' => animate_css_option(),
-                'after' => '<div class="col-md-4"><div class="form-group group">', 'before' => '</div></div>'
-            ], $value[$i]['animate']);
-            $output .= $Form->html();
-            $output .= '</div>';
-        }
-        return $output;
     }
 }
 

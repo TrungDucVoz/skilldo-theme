@@ -82,6 +82,12 @@
         width: 100%;
         z-index:52;
     }
+    .menu-vertical.menu-vertical-home .menu-vertical__content {
+        position: inherit;
+        background: #fff;
+        width: 100%;
+        z-index:52;
+    }
     .menu-vertical .menu-vertical__content .menu-vertical__category {
         border: 1px solid #dadada;
     }
@@ -219,7 +225,7 @@
         left: 0;
         z-index: 51;
     }
-    .section-vertical { overflow:hidden}
+    .section-vertical { overflow:hidden; margin-top:var(--nav-hv-margin-top); }
     .section-vertical .vertical-slider .container { width: 100%!important; padding:0; }
     .vertical-slider { padding: 10px; }
     @media(max-width: 768px) {

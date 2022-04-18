@@ -83,6 +83,3 @@ include_once 'widget/widget.php';
  * */
 include_once 'admin/theme-admin.php';
 
-//Admin::btnRestore(['id' => $item->id, 'module' => $module, 'des' => 'Bạn chắc chắn muốn khôi phục trang <b>'.html_escape($item->title).'</b> ?']);
-
-

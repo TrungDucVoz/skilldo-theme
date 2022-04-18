@@ -76,7 +76,7 @@ class widget_feedback_style_7 extends widget {
         <div class="item">
             <div class="feedback-heading">
                 <div class="avatar"><?php Template::img($item->image, $item->title);?></div>
-                <div class="title"><p>Nhà cung cấp uy tín</p></div>
+                <div class="title"><p><?php echo $item->slogan;?></p></div>
             </div>
             <div class="feedback-content">
                 <?php echo Str::clear($item->excerpt);?>

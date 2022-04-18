@@ -1,0 +1,121 @@
+.widget_product_style_13 .product_style_13_header {
+    position: relative;
+    margin: 20px 0;
+}
+.widget_product_style_13 .product_style_13_header .product_style_13_header_box {
+    overflow:hidden; 
+    display: grid; 
+    grid-template-columns: auto 100px; 
+    grid-gap: 10px;
+}
+.widget_product_style_13 .product_style_13_header .product_style_13_header_box.noarrow{
+    display: block;
+}
+.widget_product_style_13 .product_style_13_header_box .product_style_13_category_list {
+    overflow: hidden;
+    margin-bottom: 0; 
+    list-style: none; 
+    display: flex;
+    position: relative;
+}
+.widget_product_style_13 .product_style_13_header_box .product_style_13_category_list li{
+    font-size: 13px;
+    height: 50px; 
+    flex-grow: 1; 
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    box-shadow: 0 4px 60px 0 rgba(0,0,0,0.5), 0 0 0 transparent;
+}
+.widget_product_style_13 .product_style_13_header_box .product_style_13_category_list li a {
+    color:#fff;
+    display: block;
+    background-color: #b7b7b7;
+    text-align: center;
+    height: 50px; 
+    line-height: 50px; 
+    text-transform: uppercase;
+    font-weight: bold;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    z-index: 9;
+    position: relative;
+}
+
+.widget_product_style_13 .product_style_13_header_box .product_style_13_arrow{
+    border: 1px solid #000;
+    padding: 1px;
+    overflow: hidden;
+    margin: 0; 
+    list-style: none;
+    display: flex;
+}
+.widget_product_style_13 .product_style_13_header_box .product_style_13_arrow li.product_arrow {
+    font-size: 13px;
+    height: 46px;
+    width: 50px;
+}
+.widget_product_style_13 .product_style_13_header_box .product_style_13_arrow li a {
+    color:#000;
+    display: block;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid #000;
+    height: 46px; 
+    line-height: 46px;
+}
+.widget_product_style_13 .product_style_13_header_box .product_style_13_category_list li a:hover ,
+.widget_product_style_13 .product_style_13_header_box .product_style_13_category_list li a.active {
+    color: #fff;
+    background-color:var(--theme-color);
+    text-decoration: none;
+}
+.widget_product_style_13 .product_style_13_content {
+    overflow:hidden;
+}
+.widget_product_style_13 .product_style_13_header_box .js_show_tab {
+    background: #fff; 
+    overflow: hidden;
+    display: none;
+    height: 30px; 
+}
+.widget_product_style_13 .product_style_13_header_box .js_show_tab .js_btn_show_tab {
+    display: inline-block;
+    width: 40px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center; 
+    color:#000;
+    background-color: #fff; 
+    border-radius: 5px; 
+    border: 1px solid #ccc;
+}
+.widget_product_style_13 .more-link{
+    margin-top: 20px;
+}
+@media (max-width: 600px) {
+    .widget_product_style_13 .box-header{ display: flex; align-items: center; justify-content: space-between; position: relative;}
+    .widget_product_style_13 .product_style_13_header{ position: unset; margin: 0}
+    .widget_product_style_13 .product_style_13_header .product_style_13_header_box{ display: block; }
+    .widget_product_style_13 .product_style_13_header_box .product_style_13_arrow{display: none;}
+    .widget_product_style_13 .product_style_13_header_box .js_show_tab { display: inline-block; width: auto; background: transparent;}
+    .widget_product_style_13 .product_style_13_header_box .product_style_13_category_list {
+        display: none;
+        position: absolute;
+        width: 100%;
+        top: 55px;
+        z-index: 999;
+        left: 0;
+    }
+    .widget_product_style_13 .product_style_13_header_box .product_style_13_category_list li.item {
+        display: block; 
+        width: 100%;
+        border-left: 0px solid transparent;
+        border-right: 0px solid transparent;
+        border-bottom: 1px solid #fff;
+    }
+    /*.widget_product_style_13 .product_style_13_header_box .product_style_13_category_list li.item:last-of-type {
+        border-bottom: 0px;
+    }*/
+}

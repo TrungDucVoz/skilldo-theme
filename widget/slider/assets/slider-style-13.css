@@ -1,0 +1,91 @@
+.widget_slider_style_13 .slider-center, .widget_slider_style_13 .slider-left  {
+    padding-right: 0;
+}
+.widget_slider_style_13 .slider_box {
+    border-radius: 5px;
+}
+.widget_slider_style_13 .slider_list_item .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.widget_slider_style_13 .slider_list_thumb {
+    background-color: var(--slider-thumb-bg);
+}
+.widget_slider_style_13 .slider_list_thumb .item {
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 10px;
+    outline: none;
+}
+.widget_slider_style_13 .slider_list_thumb .item .heading {
+    font-size: 15px; line-height: 25px;
+    text-align: center;
+    margin: 0;
+    height: 50px; overflow: hidden;
+    color: var(--slider-thumb-color);
+}
+.widget_slider_style_13 .slider_list_thumb .slick-current.item .heading {
+    color:var(--slider-thumb-color-active);
+}
+.widget_slider_style_13 .slider_list_thumb .item {
+    margin-right: 1px;
+}
+.widget_slider_style_13 .in-slider .slider_list_thumb {
+    position: absolute; bottom: 0; left: 0; width: 100%;
+}
+
+.widget_slider_style_13 .heading h3 {
+    background-color: var(--slider-order-bg);
+    margin: 0;
+    padding: 10px;
+    font-size: 18px; line-height: 25px;
+    color: var(--slider-order-color);
+    text-align: center;
+    font-weight: bold;
+}
+.widget_slider_style_13 .slider-customer-order {
+    border: 1px solid var(--slider-order-bg);
+    border-radius: 5px;
+    background-color: #fff;
+}
+.widget_slider_style_13 .slider-customer-order .customer-order--content {
+    display: flex;
+}
+.widget_slider_style_13 .slider-customer-order .customer-order--content .item-order {
+    border-bottom: 1px solid var(--slider-order-bg);
+    position: relative;
+    padding:10px 0;
+}
+.widget_slider_style_13 .slider-customer-order .customer-order--content .item-order .title {
+    display: flex;
+    flex-wrap: nowrap; gap:5px; align-items: center;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px 10px;
+}
+.widget_slider_style_13 .slider-customer-order .customer-order--content .item-order .title .time {
+    width: 70px;
+}
+.widget_slider_style_13 .slider-customer-order .customer-order--content .item-order .title .text {
+    width: calc(100% - 70px);
+}
+.widget_slider_style_13 .slider-customer-order .customer-order--content .item-order .title .time span {
+    font-size: 11px; display: block; color: var(--btn-red);
+    padding:0 4px; border-radius: 4px; text-align: center;
+    border: 1px dashed var(--btn-red);
+}
+.widget_slider_style_13 .slider-customer-order .customer-order--content .item-order .title p span {
+    color: #f43237;
+}
+@media (max-width: 1000px) {
+    .widget_slider_style_13 .heading h3 {
+        font-size: 15px; line-height: 25px;
+    }
+}
+@media (max-width: 768px) {
+    .widget_slider_style_13 .slider-center, .widget_slider_style_13 .slider-left {
+        padding: 0; clear: both;
+    }
+}
+

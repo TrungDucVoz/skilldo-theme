@@ -12,6 +12,7 @@ class widget_videos_style_1 extends widget {
         if(!class_exists('video_gallery')) {
             $left[] = ['field' => 'gallery', 'label' =>'Nguồn dữ liệu', 'type' => 'gallery'];
         }
+        $left[] = ['field' => 'height', 'label' =>'Chiều cao video', 'type' => 'number', 'value' => 250];
         $left[] = ['field' => 'display', 'type' => 'widget_videos_style_1::inputDisplay'];
         $right[] = ['field' => 'per_row', 		'label' =>'Số video trên 1 hàng', 			'type' => 'col', 'value' => 4, 'args' => array('min'=>1, 'max' => 10)];
         $right[] = ['field' => 'per_row_tablet','label' =>'Số video trên 1 hàng - tablet', 	'type' => 'col', 'value' => 3, 'args' => array('min'=>1, 'max' => 5)];
@@ -59,6 +60,11 @@ class widget_videos_style_1 extends widget {
                 <div class="list-video row"><?php $this->displayList($this->options->galleries);?></div>
             <?php } ?>
         </div>
+        <style>
+            .js_widget_videos_style_1_<?php echo $this->id;?>.widget_videos_style_1 .video-item .video-img{
+                --video-height:<?php echo (!empty($this->options->height)) ? (int)$this->options->height : '250';?>px;
+            }
+        </style>
         <?php
         $content = ob_get_contents();
         ob_end_clean();

@@ -10,13 +10,13 @@ Dropdownhover.TIMEOUT
 Dropdownhover.DEFAULTS={animations:['fadeInDown','fadeInRight','fadeInUp','fadeInLeft'],}
 Dropdownhover.prototype.show=function(_dropdownLink){var $this=$(_dropdownLink)
 window.clearTimeout(Dropdownhover.TIMEOUT)
-$('.dropdown').not($this.parents()).each(function(){$(this).removeClass('open');});var effect=this.options.animations[0]
+$('.dropdown').not($this.parents()).each(function(){$(this).removeClass('show');});var effect=this.options.animations[0]
 if($this.is('.disabled, :disabled'))return
 var $parent=$this.parent()
-var isActive=$parent.hasClass('open')
+var isActive=$parent.hasClass('show')
 if(!isActive){var $dropdown=$this.next('.dropdown-menu')
 var relatedTarget={relatedTarget:this}
-$parent.addClass('open')
+$parent.addClass('show')
 var side=this.position($dropdown)
 side=='top'?effect=this.options.animations[2]:side=='right'?effect=this.options.animations[3]:side=='left'?effect=this.options.animations[1]:effect=this.options.animations[0]
 $dropdown.addClass('animated '+effect)
@@ -25,7 +25,7 @@ transition?$dropdown.one('bsTransitionEnd',function(){$dropdown.removeClass('ani
 Dropdownhover.prototype.hide=function(_dropdownLink){var that=this
 var $this=$(_dropdownLink)
 var $parent=$this.parent()
-Dropdownhover.TIMEOUT=window.setTimeout(function(){$parent.removeClass('open')},Dropdownhover.DELAY)}
+Dropdownhover.TIMEOUT=window.setTimeout(function(){$parent.removeClass('show')},Dropdownhover.DELAY)}
 Dropdownhover.prototype.position=function(dropdown){var win=$(window);dropdown.css({bottom:'',left:'',top:'',right:''}).removeClass('dropdownhover-top')
 var viewport={top:win.scrollTop(),left:win.scrollLeft()};viewport.right=viewport.left+win.width();viewport.bottom=viewport.top+win.height();var bounds=dropdown.offset();bounds.right=bounds.left+dropdown.outerWidth();bounds.bottom=bounds.top+dropdown.outerHeight();var position=dropdown.position();position.right=bounds.left+dropdown.outerWidth();position.bottom=bounds.top+dropdown.outerHeight();var side=''
 var isSubnow=dropdown.parents('.dropdown-menu').length

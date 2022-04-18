@@ -48,6 +48,7 @@ h1,h2,h3,h4,h5,h6, .header, .products-detail h1,
 .item-pr-price .product-item-price {
     font-family: var(--font-header);
 }
+.fade:not(.show).in { opacity: 1;}
 /*============= header ====================*/
 .top-bar {
     min-height: 40px;
@@ -213,6 +214,38 @@ header {
             }
         }
     }
+    .navbar-nav {
+        flex-direction: inherit;
+        li {
+            position: relative;
+            a { position: relative;display: block }
+        }
+    }
+    .collapse:not(.show) {
+        display: block;
+    }
+    .show>.dropdown-menu {
+        display: block; position: absolute;
+        top:100%; left: 0;
+        li {
+            width:100%;
+            a {
+                width: 100%; display: block; position: relative;
+            }
+            >.dropdown-menu {
+                left: 100%;
+                margin: 0;
+                right: auto;
+                top: -1px;
+            }
+        }
+    }
+}
+.menu-vertical .menu-vertical__content .menu-vertical__category__nav {
+    padding-left: 0;
+}
+.menu-vertical .menu-vertical__content .menu-vertical__category__nav .nav-item {
+    position: relative!important;
 }
 /*============= header-mobile ====================*/
 .header-mobile {
@@ -906,6 +939,7 @@ header {
 }
 .post {
     .item {
+        display: flex; flex-wrap: wrap;
         overflow: hidden; margin-bottom: 10px; padding: 0px 0;
         transition: all .25s cubic-bezier(.02,.01,.47,1);
         .img {
@@ -1627,6 +1661,75 @@ footer {
     padding:10px 0;
     margin-bottom:15px;
     .btn-breadcrumb a.btn.btn-default { color:#333; line-height:37px;}
+}
+.hidden { display: none; }
+@media (min-width: 1200px) {
+    .hidden-lg {
+        display: none!important;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .hidden-md {
+        display: none!important;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .hidden-sm {
+        display: none!important;
+    }
+}
+@media (max-width: 767px) {
+    .hidden-xs {
+        display: none!important;
+    }
+    .col-xs-12 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+    .col-xs-11 {
+        flex: 0 0 auto;
+        width: 91.66666667%;
+    }
+    .col-xs-10 {
+        flex: 0 0 auto;
+        width: 83.33333333%;
+    }
+    .col-xs-9 {
+        flex: 0 0 auto;
+        width: 75%;
+    }
+    .col-xs-8 {
+        flex: 0 0 auto;
+        width: 66.66666667%;
+    }
+    .col-xs-7 {
+        flex: 0 0 auto;
+        width: 58.33333333%;
+    }
+    .col-xs-6 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+    .col-xs-5 {
+        flex: 0 0 auto;
+        width: 41.66666667%;
+    }
+    .col-xs-4 {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+    }
+    .col-xs-3 {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+    .col-xs-2 {
+        flex: 0 0 auto;
+        width: 16.66666667%;
+    }
+    .col-xs-1 {
+        flex: 0 0 auto;
+        width: 8.33333333%;
+    }
 }
 /*============= effect =================*/
 //hiệu ứng gương

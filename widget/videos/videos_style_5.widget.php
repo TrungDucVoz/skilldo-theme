@@ -113,7 +113,7 @@ class widget_videos_style_5 extends widget {
             $this->options->box_size['padding']['left'] = '0';
             $this->options->box_size['padding']['right'] = '0';
         }
-        if ((!class_exists('video_gallery') && !isset($this->options->gallery)) || empty($this->options->gallery)) {
+        if (!class_exists('video_gallery') && !isset($this->options->gallery)) {
             $galleries = [
                 (object)[
                     'url'     => '',

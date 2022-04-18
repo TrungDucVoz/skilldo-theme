@@ -9,15 +9,15 @@ ThemeOption::addField('nav','nav_text_color_hover', 'color', ['after' => '<div c
 
 ThemeOption::addGroupSub('nav', 'navsub', ['name' => 'Navigation con']);
 ThemeOption::addField('nav','navsub_bg_color', 'color', ['sub' => 'navsub', 'after' => '<div class="col-md-6"><label>Màu nền menu con</label><div class="form-group group">', 'before'=> '</div></div>']);
-ThemeOption::addField('nav','navsub_bg_color_hover', 'color', ['sub' => 'navsub', 'after' => '<div class="col-md-6"><label>Màu nền menu con (hover)</label><div class="form-group group">', 'before'=> '</div></div>']);
-ThemeOption::addField('nav','navsub_text_color', 'color', ['sub' => 'navsub', 'after' => '<div class="col-md-6"><label>Màu chữ menu con</label><div class="form-group group">', 'before'=> '</div></div>']);
+ThemeOption::addField('nav','navsub_bg_color_hover', 'color', ['sub' => 'navsub', 'after' => '<div class="col-md-2"><label>Màu nền menu con (hover)</label><div class="form-group group">', 'before'=> '</div></div>']);
+ThemeOption::addField('nav','navsub_text_color', 'color', ['sub' => 'navsub', 'after' => '<div class="col-md-2"><label>Màu chữ menu con</label><div class="form-group group">', 'before'=> '</div></div>']);
 ThemeOption::addField('nav','navsub_text_color_hover', 'color', ['sub' => 'navsub', 'after' => '<div class="col-md-6"><label>Màu chữ menu con (hover)</label><div class="form-group group">', 'before'=> '</div></div>']);
 
 ThemeOption::addGroupSub('nav', 'nav_vh_header', ['name' => 'Navigation dọc - Tiêu đề']);
-ThemeOption::addField('nav', 'nav_vh_text', 'text', ['sub' => 'nav_vh_header', 'label' => 'Tiêu đề', 'after' => '<div class="col-md-4"><div class="form-group group">', 'before' => '</div></div>']);
-
-ThemeOption::addField('nav','nav_vh_text_color','color', ['sub' => 'nav_vh_header', 'label' => 'Màu chử tiêu đề', 'after' => '<div class="col-md-4"><div class="form-group group">', 'before' => '</div></div>']);
-ThemeOption::addField('nav','nav_vh_bg','color', ['sub' => 'nav_vh_header', 'label' => 'Màu nền tiêu đề', 'after' => '<div class="col-md-4"><div class="form-group group">', 'before' => '</div></div>']);
+ThemeOption::addField('nav', 'nav_vh_text', 'text', ['sub' => 'nav_vh_header', 'label' => 'Tiêu đề', 'after' => '<div class="col-md-3"><div class="form-group group">', 'before' => '</div></div>']);
+ThemeOption::addField('nav','nav_vh_text_color','color', ['sub' => 'nav_vh_header', 'label' => 'Màu chử tiêu đề', 'after' => '<div class="col-md-3"><div class="form-group group">', 'before' => '</div></div>']);
+ThemeOption::addField('nav','nav_vh_bg','color', ['sub' => 'nav_vh_header', 'label' => 'Màu nền tiêu đề', 'after' => '<div class="col-md-3"><div class="form-group group">', 'before' => '</div></div>']);
+ThemeOption::addField('nav','nav_vh_margin_top','number', ['sub' => 'nav_vh_header', 'label' => 'Khoảng cách tới menu chính', 'after' => '<div class="col-md-3"><div class="form-group group">', 'before' => '</div></div>', 'value' => 0]);
 
 ThemeOption::addGroupSub('nav', 'nav_vh_menu', ['name' => 'Navigation dọc - menu']);
 ThemeOption::addField('nav','nav_v_bg', 'color', ['sub' => 'nav_vh_menu', 'label' => 'Màu nền', 'after' => '<div class="col-md-6"><div class="form-group group">', 'before' => '</div></div>']);
