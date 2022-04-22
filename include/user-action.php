@@ -26,11 +26,11 @@ $url = str_replace(Url::base(), '', $url);
 </ul>
 
 <style type="text/css">
-	.warper {
+	.wrapper {
 		background-color: #F7F8FA;
 	}
 	.user-profile {
-		margin: 50px 0;
+		margin: 50px 0; display: flex; flex-wrap: wrap;
 	}
 	.user-header-title {
 		margin-top: 0; padding:0;

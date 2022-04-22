@@ -7,7 +7,7 @@ Layout-name: Template Trang Chủ
 	<body class="" <?php do_action('in_tag_body');?> style="height: auto">
         <?php Template::partial('include/mobile-header');?>
 		<div id="td-outer-wrap">
-			<div class="warper">
+			<div class="wrapper">
                 <?php Template::partial('include/top');?>
                 <?php
                 $layout_home = Option::get('layout_home', 'layout-home-1');

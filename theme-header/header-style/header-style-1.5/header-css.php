@@ -8,6 +8,7 @@
         --header-search-btn-width:70px;
         --header-item-head-color:<?php echo $item['titleColor'];?>;
         --header-item-bg-color:<?php echo $item['background'];?>;
+        --search-input-width:calc(100% - var(--header-search-btn-width));
     }
     header .header-content {
         padding:10px 0;
@@ -24,7 +25,7 @@
         border-radius: 5px;
     }
     header .search .form-search .form-group {
-        width: calc(100% - var(--header-search-btn-width));
+        width: var(--search-input-width);
     }
     header .search .form-search .form-group .form-control {
         height: 45px; background-color: transparent;

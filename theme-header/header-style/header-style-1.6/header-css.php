@@ -10,6 +10,7 @@
         --header-item-txt-color:<?php echo option::get('header_item_description_color', '#ed860a');?>;
         --header-hotline-color-heading:<?php echo (!empty(Option::get('hotline_color_heading'))) ? Option::get('hotline_color_heading') : '#000';?>;
         --header-hotline-color-phone:<?php echo (!empty(Option::get('hotline_color_phone'))) ? Option::get('hotline_color_phone') : 'red';?>;
+        --search-input-width:calc(100% - var(--header-search-btn-width));
     }
     header .header-content {
         padding:10px 0;
@@ -26,7 +27,7 @@
         border-radius: 5px;
     }
     header .search .form-search .form-group {
-        width: calc(100% - var(--header-search-btn-width));
+        width: var(--search-input-width);
     }
     header .search .form-search .form-group .form-control {
         background-color:transparent;

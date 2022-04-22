@@ -1,0 +1,76 @@
+.widget_about_style_14 {
+    --tab-width:300px;
+}
+.widget_about_style_14 .row-flex {
+    position: relative;
+    display: flex; flex-wrap: wrap;
+}
+.widget_about_style_14 .item-list-tab {
+    flex: 0 0  auto;
+    width: var(--tab-width);
+    background-color: var(--tab-background);
+    border-right: 3px solid var(--tab-background-active);
+    overflow: hidden;
+}
+.widget_about_style_14 .item-list-tab ul {
+    list-style: none; padding: 0; margin: 0;
+}
+.widget_about_style_14 .item-list-tab li a {
+    display: block; padding: 10px 10px 10px 20px;
+    background-color: var(--tab-background); color: var(--tab-color);
+    font-size: var(--title-size); line-height: 30px; font-weight: bold; font-family: var(--title-font);
+    text-decoration: none;
+}
+.widget_about_style_14 .item-list-tab li a.active, .widget_about_style_14 .item-list-tab li a:hover {
+    background-color: var(--tab-background-active); color: var(--tab-color-active);
+}
+
+.widget_about_style_14 .item-tab-content {
+    flex: 0 0  auto;
+    width: calc(100% - var(--tab-width));
+}
+.widget_about_style_14 .item-tab-content .item-tab {
+    padding-left: 20px; display: none;
+}
+.widget_about_style_14 .item-tab-content .item-tab.active {
+    display: block;
+}
+.widget_about_style_14 .item-tab-content .item-tab .btn {
+    border-radius: 30px;
+}
+.widget_about_style_14 .item-tab-content .item-tab .item-tab-img img {
+    width: 100%; border-radius: 5px;
+}
+
+@media(max-width: 768px) {
+    .widget_about_style_14 .item-list-tab, .widget_about_style_14 .item-tab-content {
+        width: 100%;
+    }
+    .widget_about_style_14 .item-list-tab ul {
+        display: flex;
+        flex-wrap: inherit;
+        gap: 5px;
+        align-items: center;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+    .widget_about_style_14 .item-list-tab ul li {
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        max-width: inherit;
+        -webkit-flex: 0 0 auto;
+        -moz-box-flex: 0;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+    }
+    .widget_about_style_14 .item-list-tab ul li a {
+        padding: 10px;
+    }
+    .widget_about_style_14 .item-tab-content .item-tab {
+        padding-left: 0px;
+    }
+    .widget_about_style_14 .item-tab-content .item-content {
+        margin-bottom: 20px;
+    }
+}

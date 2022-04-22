@@ -25,11 +25,11 @@
 	}
 ?>
 
-<div class="box-bg-top box-bg-<?php echo $banner_setting['type'];?>">
+<div class="box-bg-top box-bg-<?php echo $banner_setting['type'];?> <?php echo Template::getPage();?>">
 	<div class="parallax box-bg-title" style="background:url(<?php echo $image_banner;?>);background-size: cover;">
 		<div class="container title">
 			<h1 class="header animated fadeInDown"><?= $name;?></h1>
-			<div class="animated fadeInUp breadcrumb-box"><?php echo Breadcrumb($breadcrumb);?></div>
+			<div class="animated fadeInUp"><?php do_action('breadcrumb_render');?></div>
 		</div>
 	</div>
 </div>
@@ -56,18 +56,24 @@
 	.box-bg-top .box-bg-title .title {
 	    position: relative;  top: 30%; transform: translateY(-30%); z-index: 1;
 	}
-	.box-bg-top .box-bg-title .title h1.header { text-align: center; font-size: 40px; color:#fff; }
-	.box-bg-top .btn-breadcrumb>.btn{ border:0; border-radius:0;background-color:transparent;color:#fff; }
-
-    .box-bg-top.box-bg-left .box-bg-title .title h1.header,
-    .box-bg-top.box-bg-left .box-bg-title .title .breadcrumb-box{
+	.box-bg-top .box-bg-title .title h1.header {
+        text-align: left; font-size: 40px; color:#fff;
+        border-bottom: 1px solid var(--theme-color);
+        padding-bottom: 15px;
+    }
+    .box-bg-top .breadcrumb-box {
+        background-color: transparent;
         text-align: left;
     }
-
-    .box-bg-top.box-bg-right .box-bg-title .title h1.header,
-    .box-bg-top.box-bg-right .box-bg-title .title .breadcrumb-box{
-        text-align: right;
+    .box-bg-top .breadcrumb-box .btn-breadcrumb a.btn.btn-default {
+        color:#fff;
     }
+    .box-bg-top .breadcrumb-box .btn-breadcrumb span { font-size: 12px;}
 
-	.warper { padding-top: 0px;}
+    .box-bg-top.post_detail .title h1.header {
+        text-align: left; font-size: 20px; color:#fff;
+        border-bottom: 1px solid var(--theme-color);
+        padding-bottom: 15px;
+    }
+	.wrapper { padding-top: 0;}
 </style>

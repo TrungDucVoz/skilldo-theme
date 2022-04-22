@@ -10,10 +10,13 @@
                     </h4>
                     <div class="menu-vertical__content">
                         <div class="menu-vertical__category">
-                            <?php $type = Option::get('nav_v_type', 'style2');?>
-                            <?php
-                                if($type == 'style1') include_once 'navigation-html-style-1.php';
-                                if(empty($type) || $type == 'style2') include_once 'navigation-html-style-2.php';
+                            <?php $type = Option::get('nav_v_type', 'style2');
+                            if(empty($type) || $type == 'style1') {
+                                Template::partial(ThemeNavigationStyle3::$path.'navigation-html-style-1');
+                            }
+                            if($type == 'style2') {
+                                Template::partial(ThemeNavigationStyle3::$path.'navigation-html-style-2');
+                            }
                             ?>
                         </div>
                     </div>

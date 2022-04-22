@@ -8,6 +8,7 @@ $header_slogan_height = (!empty(Option::get('header_slogan_height'))) ? (int)Opt
         --header-search-btn-bg-color:<?php echo $search['btnBg'];?>;
         --header-search-btn-txt-color:<?php echo $search['btnColor'];?>;
         --header-search-btn-width:70px;
+        --search-input-width:calc(100% - var(--header-search-btn-width));
     }
     .row-flex-center {
         display: flex; flex-wrap: wrap; align-items: center;
@@ -26,7 +27,7 @@ $header_slogan_height = (!empty(Option::get('header_slogan_height'))) ? (int)Opt
         border-radius: 5px;
     }
     header .search .form-search .form-group {
-        width: calc(100% - var(--header-search-btn-width));
+        width: var(--search-input-width);
     }
     header .search .form-search .form-group .form-control {
         background-color:transparent;

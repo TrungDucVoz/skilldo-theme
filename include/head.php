@@ -17,8 +17,9 @@
         /* ]]> */
     </script>
     <?php
-    $body_color = option::get('body_color');
-    $body_color = empty($body_color) ? '#fff' : $body_color;
+    $footerPT           =  (is_numeric(Option::get('footer_padding_top')) ? Option::get('footer_padding_top') : '50').'px';
+    $footerPB           =  (is_numeric(Option::get('footer_padding_bottom')) ? Option::get('footer_padding_bottom') : '50').'px';
+    $footerHeaderSize   =  (is_numeric(Option::get('footer_header_size')) ? Option::get('footer_header_size') : '18').'px';
     ?>
     <style>
         :root {
@@ -28,6 +29,7 @@
             --btn-yellow:#EC971F;
             --btn-red:#ff0000;
             --btn-theme:var(--theme-color);
+            --header-mb-bg:<?php echo (Option::get('header_mobile_bg_color')) ? Option::get('header_mobile_bg_color'):'#fff';?>;
             --menu-mb-bg:<?php echo (empty(Option::get('menu_mobile_bg_color'))) ? '#fff' : Option::get('menu_mobile_bg_color');?>;
             <?php if(!empty(Option::get('menu_mobile_bg_img'))) {?>
             --menu-mb-bg-img:url('<?php echo Template::imgLink(option::get('menu_mobile_bg_img'));?>');
@@ -41,14 +43,17 @@
             <?php } ?>
             --search-mb-color:<?php echo (Option::get('header_mobile_color_search')) ? Option::get('header_mobile_color_search'):'#000';?>;
             --menu-mb-color:<?php echo (Option::get('header_mobile_icon_menu')) ? Option::get('header_mobile_icon_menu'):'#000';?>;
-            --body-color:<?php echo $body_color;?>;
             --body-img:<?php echo Option::get('body_img');?>;
             --font-family:<?php echo Option::get('text_font');?>;
             --font-header:<?php echo Option::get('header_font');?>;
 
+            --footer-header-color:<?php echo empty(Option::get('footer_header_color')) ? '#fff' : Option::get('footer_header_color');?>;
+            --footer-header-size:<?php echo $footerHeaderSize;?>;
+            --footer-text-color:<?php echo empty(Option::get('footer_text_color')) ? '#fff' : Option::get('footer_text_color');?>;
             --footer-bottom-public:<?php echo (Option::get('footer_bottom_public')) ? 'block' : 'none';?>;
             --footer-bottom-bg:<?php echo (Option::get('footer_bottom_bg_color')) ? Option::get('footer_bottom_bg_color') :'#282828';?>;
             --footer-bottom-color:<?php echo (Option::get('footer_bottom_text_color')) ? Option::get('footer_text_color') :'#fff';?>;
+            --footer-padding:<?php echo $footerPT;?> 0 <?php echo $footerPB;?> 0;
         }
     </style>
 </head>

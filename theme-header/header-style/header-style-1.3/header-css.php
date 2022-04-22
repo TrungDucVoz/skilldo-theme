@@ -10,6 +10,7 @@
         --header-item-head-color:<?php echo option::get('header_item_title_color', '#ed860a');?>;
         --header-item-txt-color:<?php echo option::get('header_item_description_color', '#ed860a');?>;
         --header-cart-txt-color:<?php echo option::get('header_icon_color', '#ed860a');?>;
+        --search-input-width:calc(100% - var(--header-search-btn-width));
     }
     header .header-content {
         padding:10px 0;
@@ -26,7 +27,7 @@
         border-radius: 5px;
     }
     header .search .form-search .form-group {
-        width: calc(100% - var(--header-search-btn-width));
+        width: var(--search-input-width);
     }
     header .search .form-search .form-group .form-control {
         height: 45px; background-color: transparent;

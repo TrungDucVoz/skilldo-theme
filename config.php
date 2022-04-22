@@ -68,6 +68,10 @@ function store_theme_support() {
 add_action( 'init', 'store_theme_support' );
 
 /**
+ * chức năng cấu hình layout theme
+ * */
+include_once 'admin/theme-admin.php';
+/**
  * Các input type mới
  * Cấu hình giao diện menu
  */
@@ -78,8 +82,5 @@ include_once 'theme-setting/theme-setting.php';
  */
 include_once 'widget/widget.php';
 
-/** 
- * chức năng cấu hình layout theme 
- * */
-include_once 'admin/theme-admin.php';
+
 

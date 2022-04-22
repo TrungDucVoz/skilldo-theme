@@ -16,7 +16,7 @@ $object->content = trim($object->content);
             <div class="col-sm-4 col-md-4 contact-map">
                 <?php echo option::get('maps_embed');?>
             </div>
-            <div class="col-sm-8 col-md-8">
+            <div class="col-sm-8 col-md-8" style="padding:15px;">
                 <div class="header-contact"><h3><?php echo __('THÔNG TIN LIÊN HỆ', 'page_contact_title_1');?></h3></div>
                 <?php if(!empty($object->content)) {?>
                 <div class="contact-text"><?php the_content();?></div>
@@ -73,7 +73,7 @@ $object->content = trim($object->content);
 <br />
 
 <style type="text/css">
-    .warper { background-color: #E6E6E6;}
+    .wrapper { background-color: #E6E6E6;}
     .header-contact h3 {
         color: #304e73;
         font-weight: 700;
@@ -93,6 +93,13 @@ $object->content = trim($object->content);
         background: rgba(233, 102, 49, 1);
     }
 	.contact-form-wrapper {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: calc(-1 * var(--bs-gutter-y));
+        margin-right: calc(-.5 * var(--bs-gutter-x));
+        margin-left: calc(-.5 * var(--bs-gutter-x));
         -webkit-box-shadow: 0px 25px 70px #01358D1A;
         box-shadow: 0px 25px 70px #01358D1A;
         border-radius: 6px;
@@ -114,7 +121,7 @@ $object->content = trim($object->content);
 	    overflow: hidden;
 	}
 	.contact-form-wrapper .form-group {
-		position: relative;
+		position: relative; margin-bottom: 10px;
 	}
 	.contact-form-wrapper .form-control {
 	    box-shadow: none;

@@ -1,28 +1,10 @@
-<?php
-$layout 		= get_theme_layout();
-
-if(isset($layout['banner'])) {
-	if($layout['banner'] == 'in-content') Template::partial('include/banner');
-}
-else {
-	$breadcrumb = Template::breadcrumb();
-	?>
-	<?php echo Breadcrumb($breadcrumb);?>
-	<h1 class="header text-left"><?= $object->title;?></h1>
-	<style>
-		h1.header { text-align:left;}
-		.btn-breadcrumb a.btn.btn-default {
-			color: #000;    line-height: 37px;
-		}
-	</style>
-	<?php
-}
-?>
 <div class="object-detail">
 	<?php if(have_posts($object)) {?>
+        <?php do_action('view_'.Template::getPage().'_before', $object);?>
 		<!-- content -->
 		<div class="object-detail-content">
 			<?php the_content();?>
 		</div>
+        <?php do_action('view_'.Template::getPage().'_after', $object);?>
 	<?php } ?>
 </div>

@@ -1,30 +1,72 @@
+:root {
+    --scrollbar-bg : #ffffff;
+    --scrollbar-color: #bfbfbf;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: var(--scrollbar-bg, auto);
+}
+::-webkit-scrollbar-corner {
+    background-color: var(--scrollbar-bg, auto);
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    /*border: 2px solid var(--scrollbar-bg,auto);*/
+    background: var(--scrollbar-color);
+}
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
 body {
-    font-family: var(--font-family); font-size: 14px;
+    font-family: var(--font-family); font-size: 14px; line-height: 25px;
     img { max-width: 100%; height: auto; }
     iframe, table { width: 100%;}
     table tr td { border: 1px solid #999; padding: 5px; }
     a { text-decoration: none; outline: 0; }
-    a:active, a:hover {text-decoration: none; outline: 0;}
-    a:hover, .post .item .title h3.header a:hover, .related_post .item .title a:hover {
+    a:active, a:hover { text-decoration: none; outline: 0;}
+    a:hover, .post .item .title .header a:hover, .related_post .item .title a:hover {
         color:var(--theme-color);
     }
-    p { font-size: 14px;}
     .box-content {
         position: relative; overflow: hidden;
     }
+    .wrapper {
+        margin-top:0;
+        .wrapper-container {
+            margin-top: 15px;
+        }
+    }
+    p, span {
+        line-height: 25px;
+        font-family: var(--font-family);
+        font-size: 14px;
+    }
 }
-body, p, span {
-    line-height: 25px;
-    font-family: var(--font-family);
+h1,h2,h3,h4,h5,h6,
+.header, .products-detail h1,
+.product-slider-horizontal .item .title h3,
+.product-slider-horizontal .item .title,
+.item-pr-price .product-item-price {
+    font-family: var(--font-header);
 }
-body, .warper {
-    background-color: var(--body-color);
+.header, .header-title .header { color:#000; font-weight: bold; font-size: 18px; margin:0; }
+.header-title {
+    border-bottom: 2px; text-align: center; margin-bottom: 10px;
 }
-.warper {
-    margin-top:0;
+.header:before { border-bottom: 2px solid red; }
+.container {
+    width: 100%;
+    @media (min-width: 768px) {
+        max-width: 1200px;
+    }
+    @media (min-width: 1200px) {
+        max-width: 1320px;
+    }
 }
 .form-control {
-    background-color: #F7F8FA;
+    box-shadow: none;
+    background-color: #fff;
     border-color:#F7F8FA;
     transition: all 0.5s;
     :hover {
@@ -41,12 +83,6 @@ body, .warper {
     font-weight: 500;
     padding-bottom: 4px;
     letter-spacing: 0.02em;
-}
-h1,h2,h3,h4,h5,h6, .header, .products-detail h1,
-.product-slider-horizontal .item .title h3,
-.product-slider-horizontal .item .title,
-.item-pr-price .product-item-price {
-    font-family: var(--font-header);
 }
 .fade:not(.show).in { opacity: 1;}
 /*============= header ====================*/
@@ -244,13 +280,14 @@ header {
 .menu-vertical .menu-vertical__content .menu-vertical__category__nav {
     padding-left: 0;
 }
-.menu-vertical .menu-vertical__content .menu-vertical__category__nav .nav-item {
+.menu-vertical .menu-vertical__content .menu-vertical__category__nav .nav-item a {
     position: relative!important;
 }
 /*============= header-mobile ====================*/
 .header-mobile {
     padding: 10px 0;
     overflow: hidden;
+    background-color:var(--header-mb-bg);
     .logo img { max-height: 50px; }
     .btn-cart-mobile {
         position: relative;
@@ -843,7 +880,7 @@ header {
             .post-time {
                 font-size: 12px;
                 color: #494949;
-                margin-bottom: 7px;
+                margin-bottom: 0px;
                 display: inline-block;
                 background-color: #ececec;
                 border-radius: 20px;
@@ -1086,7 +1123,7 @@ header {
 .post-time {
     font-size: 12px;
     color: #494949;
-    margin-bottom: 7px;
+    margin-bottom: 0px;
     display: inline-block;
     background-color: #ececec;
     border-radius: 20px;
@@ -1094,7 +1131,7 @@ header {
     text-align: center;
 }
 /* page-child */
-.warper-post {
+.wrapper-post {
     h1 {
         font-size: 20px;
     }
@@ -1102,7 +1139,6 @@ header {
 .object-detail {
     padding: 0;
     margin: 10px 0;
-    background-color: #fff;
     overflow: hidden;
     line-height: 25px;
     img { max-width:100%; height:auto; }
@@ -1110,7 +1146,7 @@ header {
     .object-detail-content {
         p { margin:0;}
     }
-    .info { margin: 10px 0;}
+    .info { margin: 20px 0 10px 0;}
     .info .block { display: inline-block; padding-right: 20px; color:#333;}
     .info .block:first-child { padding-left: 0px; }
     .box-share {margin: 10px 0; }
@@ -1607,19 +1643,18 @@ ul.filter-ul-list {
 }
 /*============== FOOTER ===============*/
 footer {
-    padding:10px 0;
+    padding:var(--footer-padding);
     line-height: 25px;
     background-color: #000;
-    color:#fff; a { color:#fff; }
-    .header-title {
-        margin-bottom:10px;
-    }
-    h2.header, h3.header {
-        color:#797877;
+    color:var(--footer-text-color); a { color:var(--footer-text-color); }
+    .header-title { margin-bottom:10px; }
+    .header, .header-title .header {
+        color:var(--footer-header-color);
         position: relative;
         padding-bottom: 15px;
         margin-bottom: 15px;
         text-align: left;
+        font-size: var(--footer-header-size);
         &:before {
             display: none;
             content: "";
@@ -1647,15 +1682,16 @@ footer {
 }
 .owl-controls, .owl-dots { display: none; }
 
-.breadcrumb {
-    margin: 20px 0;
+.breadcrumb-box {
+    background-color: #f5f5fb; padding: 5px 0;
     .btn-group>.btn { border:0; border-radius: 0; }
+    .btn-breadcrumb {
+        a.btn.btn-default { line-height: 37px; padding: 0 5px; color: #2e2e2e; }
+        a span {line-height: 37px;}
+        >span:first-child a { padding-left:0!important; }
+    }
 }
-.btn-breadcrumb {
-    a.btn.btn-default {line-height: 37px; padding: 0 5px;}
-    a span {line-height: 37px;}
-    >span:first-child a { padding-left:0!important; }
-}
+
 .products-breadcrumb {
     background-color:#F5F5F5;
     padding:10px 0;

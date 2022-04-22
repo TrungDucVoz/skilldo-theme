@@ -7,6 +7,7 @@
         --header-search-btn-txt-color:<?php echo $search['btnColor'];?>;
         --header-search-btn-width:70px;
         --header-hotline-color-phone:<?php echo (!empty(Option::get('header_icon_txt_color'))) ? Option::get('header_icon_txt_color') : '#000';?>;
+        --search-input-width:calc(100% - var(--header-search-btn-width));
     }
     header .header-content {
         padding:10px 0;
@@ -23,7 +24,7 @@
         border-radius: 5px;
     }
     header .search .form-search .form-group {
-        width: calc(100% - var(--header-search-btn-width));
+        width:var(--search-input-width);
     }
     header .search .form-search .form-group .form-control {
         background-color:var(--header-search-bg-color);

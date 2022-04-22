@@ -4,7 +4,7 @@
 	<body <?php do_action('in_tag_body');?> style="height: auto">
         <?php Template::partial('include/mobile-header');?>
 		<div id="td-outer-wrap">
-			<div class="warper">
+			<div class="wrapper">
                 <?php Template::partial('include/top');?>
 				<div class="container">
 					<?php if(!Auth::check()) {?>

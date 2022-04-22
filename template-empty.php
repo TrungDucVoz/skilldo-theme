@@ -8,7 +8,7 @@ Layout-name: Template Empty
 <body class="" <?php do_action('in_tag_body');?> style="height: auto">
 <?php Template::partial('include/mobile-header'); ?>
 <div id="td-outer-wrap">
-    <div class="warper">
+    <div class="wrapper">
         <?php Template::partial('include/top'); ?>
         <?php if(isset($layout['banner']) && $layout['banner'] == 'full-width') {
             Template::partial('include/banner');

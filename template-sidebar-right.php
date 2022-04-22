@@ -8,20 +8,20 @@ Layout-name: Template slider right
 	<body <?php do_action('in_tag_body');?>>
 		<?php Template::partial('include/mobile-header'); ?>
 		<div id="td-outer-wrap">
-			<div class="warper warper-<?php echo $this->template->class;?>">
+			<div class="wrapper wrapper-<?php echo $this->template->class;?>">
                 <?php Template::partial('include/top'); ?>
-				<?php if(isset($layout['banner']) && $layout['banner'] == 'full-width') { Template::partial('include/banner'); } ?>
-				<div class="container">
-					<?php if(isset($layout['banner']) && $layout['banner'] == 'in-container') { Template::partial('include/banner'); } ?>
+                <div class="wrapper-before">
+                    <?php do_action('template_wrapper_before');?>
+                    <?php do_action('template_'.Template::getPage().'_before');?>
+                </div>
+				<div class="container wrapper-container">
 					<div class="row">
-						<div class="col-md-9">
-							<?php $this->template->render_view(); ?>
-						</div>
-						<div class="col-md-3 sidebar">
-							<?php Template::partial('include/sidebar');?>
-						</div>
+						<div class="col-md-9"><?php $this->template->render_view(); ?></div>
+						<div class="col-md-3 sidebar"><?php Template::partial('include/sidebar');?></div>
 					</div>
 				</div>
+                <?php do_action('template_wrapper_after');?>
+                <?php do_action('template_'.Template::getPage().'_after');?>
 			</div>
 			<?php Template::partial('include/footer'); ?>
 		</div>

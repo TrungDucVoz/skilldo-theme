@@ -66,7 +66,7 @@
 </div>
 
 <style>
-    .warper { position: relative;}
+    .wrapper { position: relative;}
     header, footer, .footer-bottom {
         display: none;
     }

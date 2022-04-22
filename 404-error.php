@@ -368,7 +368,7 @@
 		display: block;
 	}
 
-    .warper {
+    .wrapper {
         background-color:#141019;
         background: radial-gradient(at 50% -20%, #908392, #0d060e) fixed;
     }
