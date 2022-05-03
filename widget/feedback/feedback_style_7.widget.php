@@ -35,7 +35,7 @@ class widget_feedback_style_7 extends widget {
             </div>
         </div>
         <style>
-            :root {
+            .js_widget_feedback_style_7_<?php echo $this->id;?> { {
                 --fbs7-border-color:<?php echo (!empty($this->options->feedbackBorderColor)) ? $this->options->feedbackBorderColor : 'var(--theme-color)';?>;
                 --fbs7-feedback-slogan:<?php echo (!empty($this->options->feedbackTitleColor)) ? $this->options->feedbackTitleColor : 'var(--theme-color)';?>;
                 --fbs7-feedback-content:<?php echo (!empty($this->options->feedbackContentColor)) ? $this->options->feedbackContentColor : '#000';?>;

@@ -43,7 +43,7 @@ class widget_feedback_style_6 extends widget {
             </div>
         </div>
         <style>
-            :root {
+            .js_widget_feedback_style_6_<?php echo $this->id;?> {
                 --fbs6-feedback-bg:<?php echo ($this->options->feedback_background) ? $this->options->feedback_background : 'rgb(251, 239, 239)';?>;
                 --fbs6-feedback-content:<?php echo ($this->options->feedback_content_color) ? $this->options->feedback_content_color : '#000';?>;
                 --fbs6-feedback-name:<?php echo ($this->options->feedback_name_color) ? $this->options->feedback_name_color : '#000';?>;

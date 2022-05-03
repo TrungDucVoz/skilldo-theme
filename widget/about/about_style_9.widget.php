@@ -65,7 +65,7 @@ class widget_about_style_9 extends widget {
             </div>
         </div>
         <style>
-            :root {
+            .js_widget_about_style_9_<?php echo $this->id;?> {
                 --about9-item-heading-bg:<?php echo (!empty($this->options->itemHeadingBg)) ? $this->options->itemHeadingBg : '#fff';?>;
                 --about9-item-heading-color:<?php echo (!empty($this->options->itemHeadingColor)) ? $this->options->itemHeadingColor : '#000';?>;
 

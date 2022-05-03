@@ -129,6 +129,9 @@ h6,
 .fade:not(.show).in {
   opacity: 1;
 }
+.navbar-header {
+  display: none;
+}
 /*============= header ====================*/
 .top-bar {
   min-height: 40px;

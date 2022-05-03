@@ -82,7 +82,6 @@ class widget_slider_style_3 extends widget {
                 }
                 else if(wwidth > 600) {
                     let pheight = $('.slider_post').height();
-                    console.log(pheight);
                     pheight = pheight / <?php echo count($this->options->item);?>;
                     $('.slider_right .banner').css('height', pheight + 'px');
                 }

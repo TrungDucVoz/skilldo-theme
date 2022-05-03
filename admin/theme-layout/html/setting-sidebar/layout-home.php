@@ -1,7 +1,7 @@
 <div class="col-md-12">
     <div class="box">
         <div class="header" style="margin-bottom: 15px;"><h2>Home Layout</h2></div>
-        <div class="box-content">
+        <div class="box-content row">
             <?php for($i = 1; $i <= 3; $i++) { ?>
                 <div class="col-md-4 col-lg-4">
                     <div class="layout-item">

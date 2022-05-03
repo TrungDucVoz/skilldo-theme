@@ -79,7 +79,7 @@ class widget_about_style_14 extends widget {
             })
         </script>
         <style>
-            .js_widget_about_style_14_<?php echo $this->id;?>.widget_about_style_14 {
+            .js_widget_about_style_14_<?php echo $this->id;?> {
                 --tab-color:<?php echo (!empty($this->options->itemHeadingColor)) ? $this->options->itemHeadingColor : '#000';?>;
                 --tab-background:<?php echo (!empty($this->options->itemBg)) ? $this->options->itemBg : '#fff';?>;
 

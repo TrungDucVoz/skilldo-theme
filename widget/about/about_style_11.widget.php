@@ -57,7 +57,7 @@ class widget_about_style_11 extends widget {
             </div>
         </div>
         <style>
-            :root {
+            .js_widget_about_style_11_<?php echo $this->id;?> {
                 --ab11-des-color:<?php echo (!empty($this->options->descriptionColor)) ? $this->options->descriptionColor : '#000';?>;
                 --ab11-item-title:<?php echo (!empty($this->options->itemTitle)) ? $this->options->itemTitle : '#000';?>;
                 --ab11-item-des:<?php echo (!empty($this->options->itemDes)) ? $this->options->itemDes : '#8a8b8c';?>;

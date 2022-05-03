@@ -36,7 +36,7 @@ class widget_item_style_12 extends widget {
             <?php } ?>
         </div>
         <style>
-            :root {
+            .js_widget_item_style_12_<?php echo $this->id;?> {
                 --item12-title-color:<?php echo (!empty($this->options->itemHeadingColor)) ? $this->options->itemHeadingColor : '#000';?>;
                 --item12-des-color:<?php echo (!empty($this->options->itemDesColor)) ? $this->options->itemDesColor : '#8a8b8c';?>;
                 --item12-border-color:<?php echo (!empty($this->options->itemBorderColor)) ? $this->options->itemBorderColor : 'var(--theme-color)';?>;

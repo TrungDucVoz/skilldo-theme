@@ -56,7 +56,7 @@ class widget_about_style_13 extends widget {
             </div>
         </div>
         <style>
-            .js_widget_about_style_13_<?php echo $this->id;?>.widget_about_style_13 {
+            .js_widget_about_style_13_<?php echo $this->id;?> {
                 --ab-item-title:<?php echo (!empty($this->options->itemTitle)) ? $this->options->itemTitle : '#000';?>;
                 --ab-item-border:<?php echo (!empty($this->options->itemBorder)) ? $this->options->itemBorder : '#000';?>;
             }

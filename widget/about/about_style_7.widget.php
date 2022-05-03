@@ -51,7 +51,7 @@ class widget_about_style_7 extends widget {
             </div>
         </div>
         <style>
-            :root {
+            .js_widget_about_style_7_<?php echo $this->id;?> {
                 --about7-tab-bg:<?php echo (!empty($this->options->tabsBg)) ? $this->options->tabsBg : '#eee';?>;
                 --about7-tab-bg-active:<?php echo (!empty($this->options->tabsBgActive)) ? $this->options->tabsBgActive : '#969696';?>;
                 --about7-tab-txt:<?php echo (!empty($this->options->tabsTxt)) ? $this->options->tabsTxt : '#000';?>;

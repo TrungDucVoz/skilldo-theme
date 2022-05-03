@@ -1,0 +1,18 @@
+.widget_product_style_11 .widget_product_box {
+    box-shadow: rgba(100,100,111,.2) 0 7px 29px 0;
+    background-color: #fff;
+    padding:0 10px;
+}
+.widget_product_style_11 .widget_product_box .header-title .header {
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.widget_product_style_11 .widget_product_box .border-right {
+    border-right: 1px solid #ececec;
+}
+.widget_product_style_11 .item { border: 1px solid #ececec; margin-bottom: 15px; }
+.widget_product_style_11 .slick-list,
+.widget_product_style_11 .box-content {
+    overflow: inherit;
+}

@@ -42,7 +42,7 @@ class widget_item_style_3 extends widget {
             <?php } ?>
         </div>
         <style>
-            .js_widget_item_style_3_<?php echo $this->id;?>.widget_item_style_3 {
+            .js_widget_item_style_3_<?php echo $this->id;?> {
                 --item-title:<?php echo (!empty($this->options->itemHeadingColor)) ? $this->options->itemHeadingColor : '#000';?>;
                 --item-des:<?php echo (!empty($this->options->itemDesColor)) ? $this->options->itemDesColor : '#8a8b8c';?>;
                 --item-height:<?php echo (!empty($this->options->itemHeight)) ? $this->options->itemHeight : '60';?>px;

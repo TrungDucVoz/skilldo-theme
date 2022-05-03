@@ -44,7 +44,7 @@ class widget_about_style_10 extends widget {
             </div>
         </div>
         <style>
-            :root {
+            .js_widget_about_style_10_<?php echo $this->id;?> {
                 --ab10-item-bg:<?php echo (!empty($this->options->itemBg)) ? $this->options->itemBg : 'var(--theme-color)';?>;
                 --ab10-item-bg-hover:<?php echo (!empty($this->options->itemBgHover)) ? $this->options->itemBgHover : '#fff';?>;
                 --ab10-item-txt:<?php echo (!empty($this->options->itemTxt)) ? $this->options->itemTxt : '#fff';?>;

@@ -1,0 +1,208 @@
+.widget_about_style_15 .about-content .description {
+    margin-bottom: 40px;
+}
+.widget_about_style_15 .about-content p {
+    font-size: 14px;
+    line-height: 25px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.widget_about_style_15 .about-content ul {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    list-style-type: none;
+    margin-right: -10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.widget_about_style_15 .about-content ul li {
+    -ms-flex: 0 0 50%;
+    -webkit-box-flex: 0;
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #777;
+    position: relative;
+    padding-right: 10px;
+    padding-left: 22px;
+}
+.widget_about_style_15 .about-content .description-mini {
+    position: relative;
+    margin: 20px 0;
+    padding: 0 0 0 0;
+}
+.widget_about_style_15 .about-author-box .box-inner {
+    position: relative;
+}
+.widget_about_style_15 .about-author-box .box-inner .comment {
+    position: relative;
+    color: #222222;
+    font-size: 16px;
+    line-height: 1.7em;
+    padding: 25px 35px;
+    border-radius: 10px;
+    font-style: italic;
+    background-color: #f8f8f8;
+}
+.widget_about_style_15 .about-author-box .box-inner .comment:before {
+    position: absolute;
+    content: '';
+    left: 25px;
+    bottom: -33px;
+    width: 52px;
+    height: 33px;
+    background: url('views/theme-store/widget/about/assets/comment-curve.png') no-repeat;
+}
+.widget_about_style_15 .about-author-box .box-inner .lower-box {
+    position: relative;
+    margin-left: 70px;
+    margin-top: 30px;
+}
+.widget_about_style_15 .about-author-box .box-inner .lower-box .lower-inner {
+    position: relative;
+    padding-top: 20px;
+    padding-left: 115px;
+}
+.widget_about_style_15 .about-author-box .box-inner .lower-box .lower-inner .author-image {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 88px;
+    height: 88px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.widget_about_style_15 .about-image .about-image-content {
+    position: relative;
+    padding-left: 100px;
+    padding-bottom: 100px;
+}
+.widget_about_style_15 .about-image .about-image-content .img1 {
+}
+.widget_about_style_15 .about-image .about-image-content .img2 {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    border: 8px solid #ffffff;
+    box-shadow: 0px 0px 25px rgba(0,0,0,0.15);
+}
+.widget_about_style_15 .about-image .about-image-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.widget_about_style_15 .about-image .about-image-content .img2 .video-box {
+    position: absolute;
+    bottom: 50px;
+    right: -50px;
+    width: 100px;
+    height: 100px;
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+    border-radius: 0px;
+    line-height: 100px;
+    display: inline-block;
+    z-index: 1;
+    transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    background-color: var(--ab-video-bg);
+}
+.widget_about_style_15 .about-image .about-image-content .img2 .video-box span {
+    font-size: 40px;
+}
+.widget_about_style_15 .about-image .about-image-content .img2 .video-box .ripple,
+.widget_about_style_15 .about-image .about-image-content .img2 .video-box .ripple:before,
+.widget_about_style_15 .about-image .about-image-content .img2 .video-box .ripple:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    margin-left: .5px;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-box-shadow: 0 0 0 0 rgba(0,0,0,0.4);
+    -moz-box-shadow: 0 0 0 0 rgba(0,0,0,0.4);
+    -ms-box-shadow: 0 0 0 0 rgba(0,0,0,0.4);
+    -o-box-shadow: 0 0 0 0 rgba(0,0,0,0.4);
+    box-shadow: 0 0 0 0 rgba(0,0,0,0.4);
+    -webkit-animation: ripple 3s infinite;
+    -moz-animation: ripple 3s infinite;
+    -ms-animation: ripple 3s infinite;
+    -o-animation: ripple 3s infinite;
+    animation: ripple 3s infinite;
+}
+
+.widget_about_style_15 .about-content .about-item-list {
+    display: grid; grid-template-columns: 1fr 1fr;
+}
+.widget_about_style_15 .item {
+    margin-bottom: 10px; position: relative; overflow: hidden; text-align: center; background-position: center;
+    padding-left: 10px;
+    padding-top: 10px;
+    display: flex; align-items: center;
+}
+.widget_about_style_15 .item .img {
+    --icon-width:80px;
+    height: var(--icon-width); width:var(--icon-width); text-align: center;
+    padding:5px;
+    border-radius: 3px;
+    transition: all .5s;
+}
+.widget_about_style_15 .item .img img {
+    max-width: 100%;
+    width: auto; height: 100%; display: inline-block;
+}
+.widget_about_style_15 .item:hover .img {
+    background-color: var(--theme-color);
+}
+.widget_about_style_15 .item:hover .img img {
+    -webkit-animation: toTopFromBottom .5s forwards;
+    animation: toTopFromBottom .5s forwards;
+}
+.widget_about_style_15 .item .title {
+    width: calc(100% - var(--icon-width));
+    text-align: left; padding-left: 20px;
+}
+.widget_about_style_15 .item .title p.heading {
+    color: var(--ab-item-title); font-size: 18px; font-weight: bold; margin: 0 0 10px 0;
+}
+.widget_about_style_15 .item .title p.description {
+    color: var(--ab-item-des); font-size: 14px; line-height: 20px;
+}
+@media (max-width: 600px) {
+    .widget_about_style_15 .about-content .about-item-list {
+        grid-template-columns: 1fr;
+    }
+}
+@media only screen and (max-width: 479px) {
+    .widget_about_style_15 .about-image .about-image-content {
+        padding-left: 0;padding-bottom: 0px;
+    }
+    .widget_about_style_15 .about-image .about-image-content .img2 {
+        position: relative;
+        margin-top: 30px;
+    }
+    .widget_about_style_15 .about-image .about-image-content .img2 .video-box {
+        right: 20px;
+        bottom: 20px;
+    }
+}

@@ -46,7 +46,7 @@ class widget_post_style_13 extends widget {
                 </div>
             </div>
             <style>
-                :root {
+                .js_widget_post_style_13_<?php echo $this->id;?> {
                     --post13-txt-color:<?php echo (!empty($this->options->postTextColor)) ? $this->options->postTextColor : '#000';?>;
                     --post13-heading-color:<?php echo (!empty($this->options->postHeadingColor)) ? $this->options->postHeadingColor : '#000';?>;
                     --post13-des-color:<?php echo (!empty($this->options->postDesColor)) ? $this->options->postDesColor : '#687385';?>;

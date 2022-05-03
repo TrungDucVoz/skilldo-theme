@@ -41,14 +41,14 @@
     z-index: 0;
 }
 .widget_item_style_2 .item:before {
-    background-image: url('/views/theme-store/widget/item/image/item-before.png');
+    background-image: url('views/theme-store/widget/item/image/item-before.png');
     height: 150px;
     top: -30px;
     left: -100px;
     width: 100%;
 }
 .widget_item_style_2 .item:after {
-    background-image: url('/views/theme-store/widget/item/image/item-after.png');
+    background-image: url('views/theme-store/widget/item/image/item-after.png');
     height: 200px;
     bottom: -40px;
     right: 100px;

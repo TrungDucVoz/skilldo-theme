@@ -57,14 +57,14 @@
     z-index: 0;
 }
 .widget_item_style_13 .item:before {
-    background-image: url('/views/theme-store/widget/item/image/item-before.png');
+    background-image: url('views/theme-store/widget/item/image/item-before.png');
     height: 100%;
     top: -30px;
     left: -30px;
     width: 100%;
 }
 .widget_item_style_13 .item:after {
-    background-image: url('/views/theme-store/widget/item/image/item-after.png');
+    background-image: url('views/theme-store/widget/item/image/item-after.png');
     height: 290px;
     bottom: -40px;
     right: -30px;

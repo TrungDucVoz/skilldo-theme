@@ -59,7 +59,7 @@ class widget_about_style_12 extends widget {
             </div>
         </div>
         <style>
-            .js_widget_about_style_12_<?php echo $this->id;?>.widget_about_style_12 {
+            .js_widget_about_style_12_<?php echo $this->id;?> {
                 --ab-item-title:<?php echo (!empty($this->options->itemTitle)) ? $this->options->itemTitle : '#000';?>;
                 --ab-item-bg:<?php echo (!empty($this->options->itemBg)) ? $this->options->itemBg : '#fff';?>;
                 --ab-item-height:<?php echo (!empty($this->options->itemHeight)) ? (int)$this->options->itemHeight : '70';?>px;

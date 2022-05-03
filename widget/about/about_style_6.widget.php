@@ -28,7 +28,7 @@ class widget_about_style_6 extends widget {
             </div>
         </div>
         <style>
-            :root {
+            .js_widget_about_style_6_<?php echo $this->id;?> {
                 --about-6-txt-bg : <?php echo $this->options->background;?>;
             }
         </style>

@@ -42,8 +42,8 @@
                         <span class="account-icon"><?php Template::img(option::get('header_icon_account'), 'tài khoản');?></span>
                         <span class="account-name">Tài khoản</span> <i class="fal fa-chevron-down"></i>
                         <div class="account-popup">
-                            <a class="btn btn-effect-default btn-theme" href="<?php echo Url::login();?>"><?php echo _('Đăng nhập');?></a>
-                            <a class="btn btn-effect-default btn-theme" href="<?php echo Url::register();?>"><?php echo _('Đăng ký');?></a>
+                            <a class="btn btn-effect-default btn-theme" href="<?php echo Url::login();?>"><?php echo __('Đăng nhập');?></a>
+                            <a class="btn btn-effect-default btn-theme" href="<?php echo Url::register();?>"><?php echo __('Đăng ký');?></a>
                         </div>
                     <?php } else { ?>
                         <?php $user = Auth::user();?>
@@ -54,7 +54,7 @@
                             <?php if(class_exists('sicommerce_cart')) { ?>
                                 <a class="btn btn-effect-default btn-theme" href="<?php echo my_account_url('order/history');?>">Đơn hàng</a>
                             <?php } ?>
-                            <a class="btn btn-effect-default btn-theme" href="<?php echo Url::logout();?>"><?php echo _('Đăng xuât');?></a>
+                            <a class="btn btn-effect-default btn-theme" href="<?php echo Url::logout();?>"><?php echo __('Đăng xuât');?></a>
                         </div>
                     <?php } ?>
                 </div>

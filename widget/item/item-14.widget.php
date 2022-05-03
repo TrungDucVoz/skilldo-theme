@@ -56,7 +56,7 @@ class widget_item_style_14 extends widget {
             </div>
         </div>
         <style>
-            :root {
+            .js_widget_item_style_14_<?php echo $this->id;?> {
                 --item14-title:<?php echo (!empty($this->options->itemHeadingColor)) ? $this->options->itemHeadingColor : '#000';?>;
                 --item14-des:<?php echo (!empty($this->options->itemDesColor)) ? $this->options->itemDesColor : '#8a8b8c';?>;
                 --item14-bg:<?php echo (!empty($this->options->itemBg)) ? $this->options->itemBg : '#fff';?>;

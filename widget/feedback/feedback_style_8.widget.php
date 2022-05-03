@@ -29,7 +29,7 @@ class widget_feedback_style_8 extends widget {
             </div>
         </div>
         <style>
-            :root {
+            .js_widget_feedback_style_8_<?php echo $this->id;?> { {
                 --fbs8-content-color:<?php echo (!empty($this->options->feedbackContentColor)) ? $this->options->feedbackContentColor : '#72726c';?>;
                 --fbs8-nav-color:<?php echo (!empty($this->options->feedbackNavColor)) ? $this->options->feedbackNavColor : '#cabbad';?>;
             }

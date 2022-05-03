@@ -61,7 +61,7 @@ class widget_about_style_8 extends widget {
             </div>
         </div>
         <style>
-            :root {
+            .js_widget_about_style_8_<?php echo $this->id;?> {
                 --about8-item-heading-color:<?php echo (!empty($this->options->itemHeading)) ? $this->options->itemHeading : '#000';?>;
                 --about8-item-des-color:<?php echo (!empty($this->options->itemDes)) ? $this->options->itemDes : '#8a8b8c';?>;
                 --about8-counter-heading-color:<?php echo (!empty($this->options->counterHeading)) ? $this->options->counterHeading : '#000';?>;
