@@ -3,22 +3,21 @@ function store_theme_option() {
 
 	$fonts = gets_theme_font();
 
-    ThemeOption::addGroup('general',    ['position' => 10, 'label' => 'Cấu hình chung', 'icon' => '<i class="fa fa-cogs"></i>']);
-    ThemeOption::addGroup('header',     ['position' => 20, 'label' => 'Header', 'icon' => '<i class="fab fa-hire-a-helper"></i>']);
-    ThemeOption::addGroup('header-mb',  ['position' => 30, 'label' => 'Header mobile', 'icon' => '<i class="fal fa-credit-card"></i>']);
-
+    ThemeOption::addGroup('general',    ['position' => 10, 'label' => 'Cấu hình chung', 'icon' => '<i class="fa-light fa-screwdriver-wrench"></i>']);
+    ThemeOption::addGroup('header',     ['position' => 20, 'label' => 'Header', 'icon' => '<i class="fa-light fa-heading"></i>']);
+    ThemeOption::addGroup('header-mb',  ['position' => 30, 'label' => 'Header mobile', 'icon' => '<i class="fa-light fa-credit-card"></i>']);
     ThemeOption::addGroupSub('header-mb', 'menu-mb', ['name' => 'MENU MOBILE']);
     ThemeOption::addGroupSub('header-mb', 'search-mb', ['name' => 'TÌM KIẾM MOBILE']);
 
-    ThemeOption::addGroup('nav',        ['position' => 40, 'label' => 'Navigation', 'icon' => '<i class="fa fa-bars"></i>']);
-    ThemeOption::addGroup('map',        ['position' => 50, 'label' => 'Map', 'icon' => '<i class="fa fa-map-marker"></i>']);
-    ThemeOption::addGroup('footer',     ['position' => 60, 'label' => 'Footer', 'icon' => '<i class="fa fa-window-maximize"></i>']);
+    ThemeOption::addGroup('nav',        ['position' => 40, 'label' => 'Navigation', 'icon' => '<i class="fa-light fa-bars"></i>']);
+    ThemeOption::addGroup('map',        ['position' => 50, 'label' => 'Map', 'icon' => '<i class="fa-light fa-map-location-dot"></i>']);
+    ThemeOption::addGroup('footer',     ['position' => 60, 'label' => 'Footer', 'icon' => '<i class="fa-light fa-credit-card-blank"></i>']);
     ThemeOption::addGroupSub('footer', 'footer-bottom', ['name' => 'FOOTER BOTTOM']);
 
-    ThemeOption::addGroup('fonts',      ['position' => 70, 'label' => 'Font style', 'icon' => '<i class="fas fa-font"></i>', 'root' => true]);
+    ThemeOption::addGroup('fonts',      ['position' => 70, 'label' => 'Font style', 'icon' => '<i class="fa-light fa-book-font"></i>', 'root' => true]);
     ThemeOption::addGroupSub('fonts', 'fonts-footer', ['name' => 'FONT FOOTER']);
 
-    ThemeOption::addGroup('mobile',     ['position' => 80, 'label' => 'Mobile', 'icon' => '<i class="fas fa-mobile-android"></i>', 'root' => true]);
+    ThemeOption::addGroup('mobile',     ['position' => 80, 'label' => 'Mobile', 'icon' => '<i class="fa-light fa-mobile"></i>', 'root' => true]);
     //general
     ThemeOption::addField('general', 'general_label', 'text', ['label'  => 'Tên website (shop)']);
     ThemeOption::addField('general', 'banner_img', 'image', ['label'  => 'Banner các chuyên mục']);

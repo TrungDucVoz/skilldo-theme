@@ -1,11 +1,11 @@
 <?php
-ThemeOption::addGroupSub('header', 'top-bar', ['name' => 'Top Bar']);
-ThemeOption::addField('header', 'top_bar_public', 'switch', ['sub' => 'top-bar', 'label' => 'Ẩn/Hiển top bar', 'options' => 1, 'after' => '<div class="builder-col-12 col-md-4"><div class="form-group group">', 'before' => '</div></div>']);
-ThemeOption::addField('header', 'top_bar_bg_color', 'color', ['sub' => 'top-bar', 'label' => 'Màu nền top bar', 'after' => '<div class="builder-col-6 col-md-4"><div class="form-group group">', 'before' => '</div></div>']);
-ThemeOption::addField('header', 'top_bar_bg_image', 'image', ['sub' => 'top-bar', 'label' => 'Hình nền top bar', 'after' => '<div class="builder-col-6 col-md-4"><div class="form-group group">', 'before' => '</div></div>']);
-ThemeOption::addField('header', 'top_bar_icon_color', 'color', ['sub' => 'top-bar', 'label' => 'Màu icon top bar', 'after' => '<div class="builder-col-6 col-md-4"><div class="form-group group">', 'before' => '</div></div>']);
-ThemeOption::addField('header', 'top_bar_text_color', 'color', ['sub' => 'top-bar', 'label' => 'Màu chữ top bar', 'after' => '<div class="builder-col-6 col-md-4"><div class="form-group group">', 'before' => '</div></div>']);
-ThemeOption::addField('header', 'top_bar_height', 'number', ['sub' => 'top-bar', 'label' => 'Chiều cao top bar', 'after' => '<div class="builder-col-12 col-md-4"><div class="form-group group">', 'before' => '</div></div>', 'value' => 40]);
+ThemeOption::addGroup('top-bar', ['position' => 15, 'label' => 'Top Bar', 'icon' => '<i class="fal fa-arrow-to-top"></i>']);
+ThemeOption::addField('top-bar', 'top_bar_public', 'switch', ['label' => 'Ẩn/Hiển top bar', 'options' => 1, 'after' => '<div class="builder-col-12 col-md-4"><div class="form-group group">', 'before' => '</div></div>']);
+ThemeOption::addField('top-bar', 'top_bar_bg_color', 'color', ['label' => 'Màu nền top bar', 'after' => '<div class="builder-col-6 col-md-4"><div class="form-group group">', 'before' => '</div></div>']);
+ThemeOption::addField('top-bar', 'top_bar_bg_image', 'image', ['label' => 'Hình nền top bar', 'after' => '<div class="builder-col-6 col-md-4"><div class="form-group group">', 'before' => '</div></div>']);
+ThemeOption::addField('top-bar', 'top_bar_icon_color', 'color', ['label' => 'Màu icon top bar', 'after' => '<div class="builder-col-6 col-md-4"><div class="form-group group">', 'before' => '</div></div>']);
+ThemeOption::addField('top-bar', 'top_bar_text_color', 'color', ['label' => 'Màu chữ top bar', 'after' => '<div class="builder-col-6 col-md-4"><div class="form-group group">', 'before' => '</div></div>']);
+ThemeOption::addField('top-bar', 'top_bar_height', 'number', ['label' => 'Chiều cao top bar', 'after' => '<div class="builder-col-12 col-md-4"><div class="form-group group">', 'before' => '</div></div>', 'value' => 40]);
 
 
 $fonts 	= ['Font mặc định'];

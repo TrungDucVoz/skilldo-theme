@@ -1,38 +1,44 @@
-<form action="" id="theme_layout_main">
-    <div class="col-md-12">
-        <div class="box">
-            <div class="box-content">
-                <div class="pull-right"><button type="submit" class="btn btn-green btn-icon"><i class="fad fa-hdd"></i> Lưu</button></div>
-            </div>
-        </div>
-    </div>
+
     <div class="col-md-12">
         <div class="box">
             <div class="header"><h2>Sidebar</h2></div>
             <div class="box-content" style="padding:10px;">
-                <div class="element_list">
-                    <div class="element_item js_heading_service_item <?php echo ($headingSidebarActive == 'none') ? 'active' : '';?>" data-type="sidebar" data-id="none" style="background-image: url('<?php echo Template::imgLink('heading/heading-style-none.png');?>'); background-repeat: no-repeat;">
-                        <a class="element_item__heading name" href="#">Mặc định</a>
-                        <div class="element_item__action">
-                            <?php $active = ($headingSidebarActive == 'none') ? true : false;?>
-                            <button type="button" class="btn-green btn btn-block btn-active" style="display:<?php echo ($active == true) ? 'none' : 'block';?>"><i class="fal fa-power-off"></i></button>
-                            <button type="button" class="btn-red btn btn-block btn-delete" style="display:<?php echo ($active == true) ? 'none' : 'block';?>"><i class="fal fa-trash"></i></button>
-                            <button type="button" class="btn-white btn btn-block btn-deactivate" style="display:<?php echo ($active == false) ? 'none' : 'block';?>"><i class="fal fa-power-off"></i></button>
+                <div class="row">
+                    <div class="col-md-5">
+                        <form id="sidebar_heading_form">
+                            <div class="sidebar_form_setting"></div>
+                            <div class="text-center">
+                                <button class="btn btn-green btn-block"><?php echo Admin::icon('save');?> Lưu</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="element_list scrollbar">
+                            <div class="element_item js_heading_service_item <?php echo ($headingSidebarActive == 'none') ? 'active' : '';?>" data-type="sidebar" data-id="none" style="background-image: url('<?php echo Template::imgLink('heading/heading-style-none.png');?>'); background-repeat: no-repeat;">
+                                <a class="element_item__heading name" href="#">Mặc định</a>
+                                <div class="element_item__action">
+                                    <?php $active = ($headingSidebarActive == 'none') ? true : false;?>
+                                    <button type="button" class="btn-green btn btn-block btn-active" style="display:<?php echo ($active == true) ? 'none' : 'block';?>"><i class="fal fa-power-off"></i></button>
+                                    <button type="button" class="btn-red btn btn-block btn-delete" style="display:<?php echo ($active == true) ? 'none' : 'block';?>"><i class="fal fa-trash"></i></button>
+                                    <button type="button" class="btn-white btn btn-block btn-deactivate" style="display:<?php echo ($active == false) ? 'none' : 'block';?>"><i class="fal fa-power-off"></i></button>
+                                </div>
+                            </div>
+                            <?php foreach ($headingSidebar as $item) { $item = (object)$item; ?>
+                                <div class="element_item js_heading_service_item <?php echo ($headingSidebarActive == $item->slug) ? 'active' : '';?>" data-type="sidebar" data-id="<?php echo $item->slug;?>" style="background-image: url('<?php echo $item->image;?>'); background-repeat: no-repeat;">
+                                    <a class="element_item__heading name" href="#"><?php echo $item->name;?></a>
+                                    <div class="element_item__action">
+                                        <?php $active = ($headingSidebarActive == $item->slug) ? true : false;?>
+                                        <button type="button" class="btn-green btn btn-block btn-active" style="display:<?php echo ($item->download == true || $active == true) ? 'none' : 'block';?>"><i class="fal fa-power-off"></i></button>
+                                        <button type="button" class="btn-red btn btn-block btn-delete" style="display:<?php echo ($item->download == true || $active == true) ? 'none' : 'block';?>"><i class="fal fa-trash"></i></button>
+                                        <button type="button" class="btn-white btn btn-block btn-deactivate" style="display:<?php echo ($active == false) ? 'none' : 'block';?>"><i class="fal fa-power-off"></i></button>
+                                        <button type="button" class="btn-blue btn btn-block btn-download" style="display:<?php echo ($item->download == false) ? 'none' : 'block';?>"><i class="fal fa-long-arrow-down"></i></button>
+                                    </div>
+                                </div>
+                            <?php } ?>
                         </div>
                     </div>
-                    <?php foreach ($headingSidebar as $item) { $item = (object)$item; ?>
-                        <div class="element_item js_heading_service_item <?php echo ($headingSidebarActive == $item->slug) ? 'active' : '';?>" data-type="sidebar" data-id="<?php echo $item->slug;?>" style="background-image: url('<?php echo $item->image;?>'); background-repeat: no-repeat;">
-                            <a class="element_item__heading name" href="#"><?php echo $item->name;?></a>
-                            <div class="element_item__action">
-                                <?php $active = ($headingSidebarActive == $item->slug) ? true : false;?>
-                                <button type="button" class="btn-green btn btn-block btn-active" style="display:<?php echo ($item->download == true || $active == true) ? 'none' : 'block';?>"><i class="fal fa-power-off"></i></button>
-                                <button type="button" class="btn-red btn btn-block btn-delete" style="display:<?php echo ($item->download == true || $active == true) ? 'none' : 'block';?>"><i class="fal fa-trash"></i></button>
-                                <button type="button" class="btn-white btn btn-block btn-deactivate" style="display:<?php echo ($active == false) ? 'none' : 'block';?>"><i class="fal fa-power-off"></i></button>
-                                <button type="button" class="btn-blue btn btn-block btn-download" style="display:<?php echo ($item->download == false) ? 'none' : 'block';?>"><i class="fal fa-long-arrow-down"></i></button>
-                            </div>
-                        </div>
-                    <?php } ?>
                 </div>
+
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -41,40 +47,47 @@
         <div class="box">
             <div class="header"><h2>Widget</h2></div>
             <div class="box-content" style="padding:10px;">
-                <div class="element_list">
-                    <div class="element_item js_heading_service_item <?php echo ($headingWidgetActive == 'none') ? 'active' : '';?>" data-type="widget" data-id="none" style="background-image: url('<?php echo Template::imgLink('heading/heading-style-none.png');?>'); background-repeat: no-repeat;">
-                        <a class="element_item__heading name" href="#">Mặc định</a>
-                        <div class="element_item__action">
-                            <?php $active = ($headingWidgetActive == 'none') ? true : false;?>
-                            <button type="button" class="btn-green btn btn-block btn-active" style="display:<?php echo ($active == true) ? 'none' : 'block';?>"><i class="fal fa-power-off"></i></button>
-                            <button type="button" class="btn-red btn btn-block btn-delete" style="display:<?php echo ($active == true) ? 'none' : 'block';?>"><i class="fal fa-trash"></i></button>
-                            <button type="button" class="btn-red btn btn-block btn-deactivate" style="display:<?php echo ($active == false) ? 'none' : 'block';?>"><i class="fal fa-power-off"></i></button>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="widget_form_setting"></div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="element_list scrollbar">
+                            <div class="element_item js_heading_service_item <?php echo ($headingWidgetActive == 'none') ? 'active' : '';?>" data-type="widget" data-id="none" style="background-image: url('<?php echo Template::imgLink('heading/heading-style-none.png');?>'); background-repeat: no-repeat;">
+                                <a class="element_item__heading name" href="#">Mặc định</a>
+                                <div class="element_item__action">
+                                    <?php $active = ($headingWidgetActive == 'none') ? true : false;?>
+                                    <button type="button" class="btn-green btn btn-block btn-active" style="display:<?php echo ($active == true) ? 'none' : 'block';?>"><i class="fal fa-power-off"></i></button>
+                                    <button type="button" class="btn-red btn btn-block btn-delete" style="display:<?php echo ($active == true) ? 'none' : 'block';?>"><i class="fal fa-trash"></i></button>
+                                    <button type="button" class="btn-red btn btn-block btn-deactivate" style="display:<?php echo ($active == false) ? 'none' : 'block';?>"><i class="fal fa-power-off"></i></button>
+                                </div>
+                            </div>
+                            <?php foreach ($headingWidgets as $item) { $item = (object)$item; ?>
+                                <div class="element_item js_heading_service_item <?php echo ($headingWidgetActive == $item->slug) ? 'active' : '';?>" data-type="widget" data-id="<?php echo $item->slug;?>" style="background-image: url('<?php echo $item->image;?>'); background-repeat: no-repeat;">
+                                    <a class="element_item__heading name" href="#"><?php echo $item->name;?></a>
+                                    <div class="element_item__action">
+                                        <?php $active = ($headingWidgetActive == $item->slug) ? true : false;?>
+                                        <button type="button" class="btn-green btn btn-block btn-active" style="display:<?php echo ($item->download == true || $active == true) ? 'none' : 'block';?>"><i class="fal fa-power-off"></i></button>
+                                        <button type="button" class="btn-red btn btn-block btn-delete" style="display:<?php echo ($item->download == true || $active == true) ? 'none' : 'block';?>"><i class="fal fa-trash"></i></button>
+                                        <button type="button" class="btn-red btn btn-block btn-deactivate" style="display:<?php echo ($active == false) ? 'none' : 'block';?>"><i class="fal fa-power-off"></i></button>
+                                        <button type="button" class="btn-blue btn btn-block btn-download" style="display:<?php echo ($item->download == false) ? 'none' : 'block';?>"><i class="fal fa-long-arrow-down"></i></button>
+                                    </div>
+                                </div>
+                            <?php } ?>
                         </div>
                     </div>
-                    <?php foreach ($headingWidgets as $item) { $item = (object)$item; ?>
-                        <div class="element_item js_heading_service_item <?php echo ($headingWidgetActive == $item->slug) ? 'active' : '';?>" data-type="widget" data-id="<?php echo $item->slug;?>" style="background-image: url('<?php echo $item->image;?>'); background-repeat: no-repeat;">
-                            <a class="element_item__heading name" href="#"><?php echo $item->name;?></a>
-                            <div class="element_item__action">
-                                <?php $active = ($headingWidgetActive == $item->slug) ? true : false;?>
-                                <button type="button" class="btn-green btn btn-block btn-active" style="display:<?php echo ($item->download == true || $active == true) ? 'none' : 'block';?>"><i class="fal fa-power-off"></i></button>
-                                <button type="button" class="btn-red btn btn-block btn-delete" style="display:<?php echo ($item->download == true || $active == true) ? 'none' : 'block';?>"><i class="fal fa-trash"></i></button>
-                                <button type="button" class="btn-red btn btn-block btn-deactivate" style="display:<?php echo ($active == false) ? 'none' : 'block';?>"><i class="fal fa-power-off"></i></button>
-                                <button type="button" class="btn-blue btn btn-block btn-download" style="display:<?php echo ($item->download == false) ? 'none' : 'block';?>"><i class="fal fa-long-arrow-down"></i></button>
-                            </div>
-                        </div>
-                    <?php } ?>
                 </div>
                 <div class="clearfix"></div>
             </div>
         </div>
     </div>
-</form>
 <style>
     .element_list {
         display: flex; flex-wrap: wrap; gap: 10px;
+        max-height: 500px; overflow-y: auto;
     }
     .element_list .element_item {
-        flex: 0 0 calc(100%/4 - 10px); width:calc(100%/4 - 10px);
+        flex: 0 0 calc(100%/3 - 10px); width:calc(100%/3 - 10px);
         height: 280px;
         position: relative;
         text-align: center;
@@ -172,6 +185,14 @@
 <script type="text/javascript">
     $(function(){
 
+        $.ajaxSetup({
+            beforeSend: function(xhr, settings) {
+                if (settings.data.indexOf('csrf_test_name') === -1) {
+                    settings.data += '&csrf_test_name=' + encodeURIComponent(getCookie('csrf_cookie_name'));
+                }
+            }
+        });
+
         let ThemeHeadingHandler = function() {
             $( document )
                 //cài widget
@@ -179,6 +200,11 @@
                 .on('click', '.js_heading_service_item .btn-active', this.active)
                 .on('click', '.js_heading_service_item .btn-deactivate', this.deactivate)
                 .on('click', '.js_heading_service_item .btn-delete', this.delete)
+                .on('submit', '#sidebar_heading_form', this.sidebarSave)
+                .on('submit', '#widget_heading_form', this.widgetSave)
+
+            this.sidebarSetting();
+            this.widgetSetting();
         };
 
         ThemeHeadingHandler.prototype.download = function(e) {
@@ -269,6 +295,12 @@
                     $('.js_heading_service_item.active').removeClass('active');
                     item.find('.element_item__action').html('<button type="button" class="btn-white btn btn-block btn-deactivate"><i class="fal fa-power-off"></i></button>');
                     item.addClass('active');
+                    if(type == 'sidebar') {
+                        ThemeHeadingHandler.prototype.sidebarSetting();
+                    }
+                    else {
+                        ThemeHeadingHandler.prototype.widgetSetting();
+                    }
                 }
             });
 
@@ -304,6 +336,92 @@
 
             return false;
         };
+
+        ThemeHeadingHandler.prototype.sidebarSetting = function(e) {
+
+            let data = {
+                'action' : 'Theme_Ajax_Element::headingSetting',
+                'type' 	 : 'sidebar',
+            };
+
+            let jqxhr   = $.post(ajax, data, function(data) {}, 'json');
+
+            jqxhr.done(function(response) {
+
+                show_message(response.message, response.status);
+
+                if(response.status === 'success') {
+                    $('.sidebar_form_setting').html(response.html);
+                    formBuilderReset();
+                }
+            });
+
+            return false;
+        }
+
+        ThemeHeadingHandler.prototype.widgetSetting = function(e) {
+
+            let data = {
+                'action' : 'Theme_Ajax_Element::headingSetting',
+                'type' 	 : 'widget',
+            };
+
+            let jqxhr   = $.post(ajax, data, function(data) {}, 'json');
+
+            jqxhr.done(function(response) {
+
+                show_message(response.message, response.status);
+
+                if(response.status === 'success') {
+                    $('.widget_form_setting').html(response.html);
+                    formBuilderReset();
+                }
+            });
+
+            return false;
+        }
+
+        ThemeHeadingHandler.prototype.sidebarSave = function(e) {
+
+            let data = $(this).serializeJSON();
+
+            data.action = 'Theme_Ajax_Element::headingSave';
+
+            data.headingType = 'sidebar';
+
+            let jqxhr   = $.post(ajax, data, function(data) {}, 'json');
+
+            jqxhr.done(function(response) {
+
+                show_message(response.message, response.status);
+
+                if(response.status === 'success') {
+                }
+            });
+
+            return false;
+        }
+
+        ThemeHeadingHandler.prototype.widgetSave = function(e) {
+
+            let data = $(this).serializeJSON();
+
+            data.action = 'Theme_Ajax_Element::headingSave';
+
+            data.headingType = 'widget';
+
+            let jqxhr   = $.post(ajax, data, function(data) {}, 'json');
+
+            jqxhr.done(function(response) {
+
+                show_message(response.message, response.status);
+
+                if(response.status === 'success') {
+                }
+            });
+
+            return false;
+        }
 
         new ThemeHeadingHandler();
     });

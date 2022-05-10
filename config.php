@@ -2,7 +2,7 @@
 /**
 Template Name: Store Theme
 Description: Store theme là theme chuyên nghiệp được phát triển dùng cho các website bán hàng.
-Version: 2.7.1
+Version: 3.0.0
 Author: Nguyễn Hữu Trọng
 */
 function store_theme_support() {

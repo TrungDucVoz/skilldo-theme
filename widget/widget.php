@@ -16,11 +16,11 @@ Class ThemeWidget {
         Admin::asset()->location('footer')->add('store_widget',  Path::theme().'/assets/js/admin/store-widget.js');
     }
     static public function loadWidget() {
-        foreach (glob(Path::theme().'/widget/*.php') as $filename) {
+        foreach (glob(Path::theme().'/widget/*.widget.php') as $filename) {
             include_once $filename;
         }
         foreach (glob(Path::theme().'/widget/*', GLOB_ONLYDIR) as $foldername) {
-            foreach (glob($foldername.'/*.php') as $filename) {
+            foreach (glob($foldername.'/*.widget.php') as $filename) {
                 include_once $filename;
             }
         }

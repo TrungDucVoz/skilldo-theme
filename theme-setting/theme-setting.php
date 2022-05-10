@@ -91,6 +91,7 @@ Class Theme_Layout {
             }
             else if(self::$layout['banner'] == 'in-content') {
                 add_action('view_post_index_before', 'Theme_Layout::layoutBanner', 10);
+                add_action('view_products_index_before', 'Theme_Layout::layoutBanner', 10);
             }
 
             add_action('breadcrumb_render', 'Theme_Layout::layoutBreadcrumb', 10);
@@ -266,8 +267,27 @@ Class Theme_Page_Detail_Layout {
         <?php
     }
 }
+Class Theme_Product_Index_Layout {
+    function __construct() {
+        if(!isset(Theme_Layout::$layout['banner'])) {
+            add_action('template_'.Template::getPage().'_before', 'Theme_Layout::layoutBreadcrumb', 10);
+            add_action('view_products_index_before', 'Theme_Product_Index_Layout::title', 20);
+        }
+        add_action('view_products_index_after', 'Theme_Product_Index_Layout::pagination', 40, 3);
+    }
+    static function title($category) {
+        ?>
+        <h1 class="header text-left"><?= $category->name;?></h1>
+        <style>h1.header { text-align:left; margin:0 0 20px 0; font-size: 30px; }</style>
+        <?php
+    }
+    static function pagination($category, $object, $pagination) {
+        ?><nav class="text-center"><?php echo (isset($pagination))?$pagination->html():'';?></nav><?php
+    }
+}
 
 new Theme_Layout();
 new Theme_Post_Index_Layout();
+new Theme_Product_Index_Layout();
 new Theme_Post_Detail_Layout();
 new Theme_Page_Detail_Layout();

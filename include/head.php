@@ -23,6 +23,7 @@
     ?>
     <style>
         :root {
+            font-size: 14px;
             --theme-color:<?php echo Option::get('theme_color');?>;
             --btn-blue:#3F7DF6;
             --btn-green:#449D44;

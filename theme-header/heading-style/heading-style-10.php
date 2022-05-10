@@ -14,8 +14,8 @@ Class ThemeHeadingStyle10 {
     static public function css($options, $id = '') {
         $bgColor        = (!empty($options['brColor'])) ? $options['brColor'] : 'var(--theme-color)';
         $txtColor       = (!empty($options['txtColor'])) ? $options['txtColor'] : '#000';
-        $marginTop      = (!empty($options['marginTop'])) ? $options['marginTop'] : '30';
-        $marginBottom   = (!empty($options['marginBottom'])) ? $options['marginBottom'] : '20';
+        $marginTop      = (isset($options['marginTop']) && is_numeric($options['marginTop'])) ? $options['marginTop'] : '30';
+        $marginBottom   = (isset($options['marginBottom']) && is_numeric($options['marginBottom']))  ? $options['marginBottom'] : '20';
         $fontSize       = (!empty($options['fontSize'])) ? $options['fontSize'] : '20';
         $font           = (!empty($options['font'])) ? $options['font'] : 'var(--font-header)';
         $desColor       = (!empty($options['desColor'])) ? $options['desColor'] : '#000';
@@ -31,6 +31,7 @@ Class ThemeHeadingStyle10 {
                 letter-spacing: 0;
                 position: relative;
                 margin: 0 0 10px;
+                padding: 0;
             }
             body <?php echo $id;?> .header-title.header-title-style-10 .header span {
                 flex: none;

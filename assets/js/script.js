@@ -1,5 +1,12 @@
 $(function() {
-    console.log("%c SIEUKINHDOANH Thiết kế và phát triển website hàng đầu.", "font-size:25px; background-color: #0165bb; color: #fff;font-family: tahoma;padding:5px 10px;");
+    const SELF_XSS_HEADER = "STOP!";
+    const SELF_XSS_LINE_1 = "Nếu ai đó yêu cầu bạn sao chép (dán) nội dung nào đó ở đây, bạn có 11/10 khả năng bạn đang bị lừa";
+    const SELF_XSS_LINE_2 = "Dán bất cứ thứ gì vào đây có thể cấp cho những kẻ tấn công quyền truy cập vào tài khoản quản trị của bạn.";
+    const SELF_XSS_LINE_3 = "Nếu bạn hiểu chính xác những gì bạn đang làm, bạn nên đến làm việc với chúng tôi https://sikido.vn/jobs/ky-thuat";
+    console.log("%c "+SELF_XSS_HEADER, "font-size:40px; font-weight:bold; color: #FF9D00;text-shadow: 0px 0px 2px #000;");
+    console.log("%c "+SELF_XSS_LINE_1, "font-size:15px; font-weight:bold; color: #fff;text-shadow: 0px 0px 2px #000;");
+    console.log("%c "+SELF_XSS_LINE_2, "font-size:15px; font-weight:bold; color: red;text-shadow: 0px 0px 2px #000;");
+    console.log("%c "+SELF_XSS_LINE_3, "font-size:15px; font-weight:bold; color: #fff;text-shadow: 0px 0px 2px #000;");
 
     // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
     let vh = window.innerHeight * 0.01;

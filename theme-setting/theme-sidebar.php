@@ -152,8 +152,7 @@ Class ThemeSidebar {
     static public function headingCss($style = '', $options = [], $id = '.sidebar .widget') {
         $sidebar = (empty($style) || $style == 'none') ? Option::get('sidebar_heading_style') : $style;
         $style = self::registerHeading($sidebar.'.class');
-        $options['marginTop'] = 0;
-        $options['marginBottom'] = 10;
+        $options = Option::get('sidebar_heading_option');
         if(class_exists($style)) $style::css($options, $id);
     }
     static public function headingHtmlDefault($name) {

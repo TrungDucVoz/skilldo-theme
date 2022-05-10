@@ -330,6 +330,81 @@ Class Theme_Ajax_Element {
 
         echo json_encode($result);
     }
+    static public function headingSetting($ci, $model) {
+
+        $result['message'] 	= 'Cập nhật dữ liệu không thành công';
+
+        $result['status'] 	= 'error';
+
+        if(InputBuilder::post()) {
+
+            $type = InputBuilder::Post('type');
+
+            if($type == 'sidebar') {
+                $style = (empty($style) || $style == 'none') ? Option::get('sidebar_heading_style') : $style;
+                $optionHeading = Option::get('sidebar_heading_option');
+            }
+            else {
+                $style = (empty($style) || $style == 'none') ? Option::get('widget_heading_style') : $style;
+                $optionHeading = Option::get('widget_heading_option');
+            }
+
+            $FormBuilder = new FormBuilder();
+
+            ob_start();
+
+            if($style != 'none' && !empty($style)) {
+                $heading = ThemeWidget::registerHeading($style);
+                if((!empty($heading)) && class_exists($heading['class']) && method_exists($heading['class'], 'form')) {
+                    $Form = $heading['class']::form();
+                    foreach ($Form as $item) {
+                        $name = (!empty($item['name'])) ? $item['name'] : $item['field'];
+                        if(isset($item['name'])) { unset($item['name']);}
+                        if(isset($item['field'])) { unset($item['field']);}
+                        $type = $item['type']; unset($item['type']);
+                        $FormBuilder->add('heading['.$name.']', $type, $item, (isset($optionHeading[$name])) ? $optionHeading[$name] : null);
+                    }
+                    echo $FormBuilder->html(true);
+                }
+            }
+
+            $result['html'] 	= ob_get_contents();
+
+            ob_end_clean();
+
+            $result['message'] 	= 'Cập nhật dữ liệu thành công';
+
+            $result['status'] 	= 'success';
+        }
+
+        echo json_encode($result);
+    }
+    static public function headingSave($ci, $model) {
+
+        $result['message'] 	= 'Cập nhật dữ liệu không thành công';
+
+        $result['status'] 	= 'error';
+
+        if(InputBuilder::post()) {
+
+            $data = InputBuilder::post('heading');
+
+            $type = InputBuilder::post('headingType');
+
+            if($type == 'sidebar') {
+                Option::update('sidebar_heading_option', $data);
+            }
+            if($type == 'widget') {
+                Option::update('widget_heading_option', $data);
+            }
+
+            $result['message'] 	= 'Cập nhật dữ liệu thành công';
+
+            $result['status'] 	= 'success';
+        }
+
+        echo json_encode($result);
+    }
 }
 
 Ajax::admin('Theme_Ajax_Element::download');
@@ -337,3 +412,5 @@ Ajax::admin('Theme_Ajax_Element::install');
 Ajax::admin('Theme_Ajax_Element::active');
 Ajax::admin('Theme_Ajax_Element::unActive');
 Ajax::admin('Theme_Ajax_Element::save');
+Ajax::admin('Theme_Ajax_Element::headingSetting');
+Ajax::admin('Theme_Ajax_Element::headingSave');

@@ -96,4 +96,3 @@ Class ThemeHeadingStyle1_1 {
 
 add_filter('theme_widget_heading', 'ThemeHeadingStyle1_1::register');
 add_filter('theme_sidebar_heading', 'ThemeHeadingStyle1_1::register');
-
