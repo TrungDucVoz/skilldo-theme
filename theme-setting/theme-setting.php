@@ -276,8 +276,12 @@ Class Theme_Product_Index_Layout {
         add_action('view_products_index_after', 'Theme_Product_Index_Layout::pagination', 40, 3);
     }
     static function title($category) {
+	    
+	   $name = __('Sản phẩm');
+	   if (have_posts($category)) $name = $category->name;
+
         ?>
-        <h1 class="header text-left"><?= $category->name;?></h1>
+        <h1 class="header text-left"><?= $name;?></h1>
         <style>h1.header { text-align:left; margin:0 0 20px 0; font-size: 30px; }</style>
         <?php
     }
